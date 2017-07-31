@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+workspace 'GKPinViewExample'
+
+target :'GKPinViewExample' do
+    project 'GKPinViewExample.xcodeproj'
+    platform :ios, '9.0'
+
+    pod 'GKPinView', :path => '../'
+end
