@@ -13,8 +13,15 @@ final class PinView: UIView {
     
     // MARK: - Outlets
     @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var pinBubbleOne: PinBubble!
+    @IBOutlet weak var pinBubbleTwo: PinBubble!
+    @IBOutlet weak var pinBubbleThree: PinBubble!
+    @IBOutlet weak var pinBubbleFour: PinBubble!
     
     // MARK: - IBInspectables
+    
+    // MARK: - State
+    fileprivate var digitsRemaining = 4
     
     // MARK: - Initialisers
     override init(frame: CGRect) {
@@ -31,6 +38,7 @@ final class PinView: UIView {
         super.awakeFromNib()
         
     }
+
 }
 
 private extension PinView {
@@ -49,6 +57,50 @@ private extension PinView {
             return view
         }
         fatalError("Could not initialise PinView from nib.")
+    }
+    
+    // MARK: IBActions
+    @IBAction func keypadTapped(_ sender: PinButton) {
+        if digitsRemaining > 0 {
+            digitsRemaining -= 1
+            fillBubbles()
+        }
+    }
+    
+    func fillBubbles() {
+        switch digitsRemaining {
+        case 4:
+            pinBubbleOne.isFilled = false
+            pinBubbleTwo.isFilled = false
+            pinBubbleThree.isFilled = false
+            pinBubbleFour.isFilled = false
+        case 3:
+            pinBubbleOne.isFilled = true
+            pinBubbleTwo.isFilled = false
+            pinBubbleThree.isFilled = false
+            pinBubbleFour.isFilled = false
+        case 2:
+            pinBubbleOne.isFilled = true
+            pinBubbleTwo.isFilled = true
+            pinBubbleThree.isFilled = false
+            pinBubbleFour.isFilled = false
+        case 1:
+            pinBubbleOne.isFilled = true
+            pinBubbleTwo.isFilled = true
+            pinBubbleThree.isFilled = true
+            pinBubbleFour.isFilled = false
+        case 0:
+            pinBubbleOne.isFilled = true
+            pinBubbleTwo.isFilled = true
+            pinBubbleThree.isFilled = true
+            pinBubbleFour.isFilled = true
+        default:
+            assert(false, "Only values between 0-4 are valid")
+        }
+        pinBubbleOne.setNeedsDisplay()
+        pinBubbleTwo.setNeedsDisplay()
+        pinBubbleThree.setNeedsDisplay()
+        pinBubbleFour.setNeedsDisplay()
     }
     
 }
