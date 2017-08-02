@@ -17,6 +17,7 @@ public final class PinView: UIView {
     
     // MARK: - Outlets
     @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var visualEffectBackground: UIVisualEffectView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pinBubbleOne: PinBubble!
     @IBOutlet weak var pinBubbleTwo: PinBubble!
@@ -27,6 +28,19 @@ public final class PinView: UIView {
     @IBInspectable public var title: String = "Enter Passcode" {
         didSet {
             titleLabel.text = title
+        }
+    }
+  
+    @IBInspectable public var blurBackground: Bool = false {
+        didSet {
+            visualEffectBackground.isHidden = !blurBackground
+        }
+    }
+    
+    // MARK: - Other properties
+    public var blurBackgroundEffectStyle: UIBlurEffectStyle = .dark {
+        didSet {
+            visualEffectBackground.effect = UIBlurEffect(style: blurBackgroundEffectStyle)
         }
     }
     
@@ -57,6 +71,9 @@ public final class PinView: UIView {
 private extension PinView {
     
     func setupView() {
+        // make self background color clear
+        backgroundColor = .clear
+        // init and add view from nib
         let view = viewFromNib()
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

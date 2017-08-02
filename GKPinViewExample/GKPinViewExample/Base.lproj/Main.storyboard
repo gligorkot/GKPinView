@@ -69,9 +69,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bridge_photo" translatesAutoresizingMaskIntoConstraints="NO" id="S4V-GF-vbP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIg-gZ-Byt" customClass="PinView" customModule="GKPinView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Please enter your passcode"/>
                                 </userDefinedRuntimeAttributes>
@@ -79,10 +82,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="S4V-GF-vbP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="22v-Lo-7VK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CIg-gZ-Byt" secondAttribute="bottom" id="SEc-uH-Bdo"/>
                             <constraint firstItem="CIg-gZ-Byt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="VRh-1g-KRh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S4V-GF-vbP" secondAttribute="bottom" id="bmM-Bg-BNa"/>
+                            <constraint firstAttribute="trailing" secondItem="S4V-GF-vbP" secondAttribute="trailing" id="iyN-uc-xbS"/>
                             <constraint firstItem="CIg-gZ-Byt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k7U-L5-WGr"/>
                             <constraint firstAttribute="trailing" secondItem="CIg-gZ-Byt" secondAttribute="trailing" id="v3K-av-Tab"/>
+                            <constraint firstItem="S4V-GF-vbP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zd6-xw-JdE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -91,7 +98,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="45"/>
+            <point key="canvasLocation" x="45.600000000000001" y="44.527736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bridge_photo" width="1280" height="966"/>
+    </resources>
 </document>
