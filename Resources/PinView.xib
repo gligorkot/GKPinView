@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -238,6 +238,18 @@
                         <action selector="keypadTapped:" destination="-1" eventType="touchUpInside" id="RYe-9l-dfe"/>
                     </connections>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-gM-Uf9">
+                    <rect key="frame" x="254" y="494" width="80" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Qf4-2u-nEQ"/>
+                    </constraints>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -248,11 +260,13 @@
                 <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="14" id="4qc-ab-aE1"/>
                 <constraint firstItem="fiS-iG-fhd" firstAttribute="leading" secondItem="1kf-oZ-TIQ" secondAttribute="leading" id="9nQ-AV-vLP"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="12" id="C8f-Ge-Sen"/>
+                <constraint firstItem="gRx-gM-Uf9" firstAttribute="centerX" secondItem="1b2-Y9-471" secondAttribute="centerX" id="FOY-Mp-HWq"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="bottom" constant="10" id="Grx-ev-kmK"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="leading" secondItem="fiS-iG-fhd" secondAttribute="leading" id="JY4-ih-bCj"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="top" secondItem="fiS-iG-fhd" secondAttribute="bottom" constant="10" id="Kax-b8-VxZ"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="leading" secondItem="PyJ-1u-a1I" secondAttribute="leading" id="LD5-8r-2Js"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="bottom" constant="10" id="Mp6-Io-cPr"/>
+                <constraint firstAttribute="bottom" secondItem="gRx-gM-Uf9" secondAttribute="bottom" constant="10" id="NLM-RQ-PJO"/>
                 <constraint firstAttribute="trailing" secondItem="V43-9H-i4h" secondAttribute="trailing" constant="20" id="Pfg-Be-mm5"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="leading" secondItem="xfx-MW-rET" secondAttribute="leading" id="Prs-vO-Akr"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="20" id="RKE-Xv-56p"/>

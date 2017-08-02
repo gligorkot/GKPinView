@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hX8-S8-V8m">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="1E0-QX-pTy">
+            <objects>
+                <navigationController id="hX8-S8-V8m" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3n-7T-cvD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LDy-lk-yuV" kind="relationship" relationship="rootViewController" id="X3i-sB-8J8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EY5-UK-JFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1414" y="45"/>
+        </scene>
+        <!--GKPinViewExample-->
+        <scene sceneID="90f-gT-Rgi">
+            <objects>
+                <viewController id="LDy-lk-yuV" customClass="ExampleViewController" customModule="GKPinViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ypv-ud-iMG"/>
+                        <viewControllerLayoutGuide type="bottom" id="PWe-eg-6zD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kXe-iM-bNJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pn-jS-f6g">
+                                <rect key="frame" x="129.5" y="114" width="115" height="30"/>
+                                <state key="normal" title="Open Pin Screen"/>
+                                <connections>
+                                    <action selector="openPinScreenTapped:" destination="LDy-lk-yuV" eventType="touchUpInside" id="Dhh-Qj-bQF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Pn-jS-f6g" firstAttribute="centerX" secondItem="kXe-iM-bNJ" secondAttribute="centerX" id="UsA-Sr-Sgv"/>
+                            <constraint firstItem="5Pn-jS-f6g" firstAttribute="top" secondItem="Ypv-ud-iMG" secondAttribute="bottom" constant="50" id="ePJ-hY-4O6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GKPinViewExample" id="Wg6-fK-6Gu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84K-nO-pMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-706" y="45"/>
+        </scene>
+        <!--Pin View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GKPinViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PinViewController" id="BYZ-38-t0r" customClass="PinViewController" customModule="GKPinViewExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,21 +70,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIg-gZ-Byt" customClass="PinView" customModule="GKPinView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CIg-gZ-Byt" secondAttribute="bottom" id="SEc-uH-Bdo"/>
-                            <constraint firstItem="CIg-gZ-Byt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fYT-vR-gDT"/>
+                            <constraint firstItem="CIg-gZ-Byt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="VRh-1g-KRh"/>
                             <constraint firstItem="CIg-gZ-Byt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k7U-L5-WGr"/>
                             <constraint firstAttribute="trailing" secondItem="CIg-gZ-Byt" secondAttribute="trailing" id="v3K-av-Tab"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pinView" destination="CIg-gZ-Byt" id="GZV-zn-Nu6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47" y="45"/>
         </scene>
     </scenes>
 </document>
