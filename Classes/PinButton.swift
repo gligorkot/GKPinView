@@ -15,13 +15,6 @@ final class PinButton: UIButton {
     private static let lettersFontSize: CGFloat = 13
     private static let lettersLabelHeight: CGFloat = 25
     
-    @IBInspectable var keypadColor: UIColor = .white {
-        didSet {
-            digitLabel.textColor = keypadColor
-            lettersLabel.textColor = keypadColor
-        }
-    }
-    
     @IBInspectable var keypadFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
         didSet {
             digitLabel.font = keypadFont.withSize(PinButton.digitFontSize)
@@ -85,6 +78,16 @@ final class PinButton: UIButton {
         super.init(coder: aDecoder)
         layoutSubviews()
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // button target action
+        addTarget(self, action: #selector(onTap), for: .touchUpInside)
+    }
+    
+    dynamic private func onTap() {
+        animateTap()
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -93,81 +96,23 @@ final class PinButton: UIButton {
         addSubview(lettersLabel)
         
         // digit label customisations
-        digitLabel.textColor = keypadColor
+        digitLabel.textColor = tintColor
         digitLabel.font = keypadFont.withSize(PinButton.digitFontSize)
         digitLabel.textAlignment = .center
         
         // letters flabel customisations
-        lettersLabel.textColor = keypadColor
+        lettersLabel.textColor = tintColor
         lettersLabel.font = keypadFont.withSize(PinButton.lettersFontSize)
         lettersLabel.textAlignment = .center
             
         // digit and letters labels frames
-        if hideKeypadLetters {
+        if hideKeypadLetters || digit == 0 { // always center the 0, so it aligns with the backspace button
             digitLabel.frame = bounds
             lettersLabel.frame = CGRect.zero
         } else {
             digitLabel.frame = CGRect(origin: bounds.origin, size: CGSize(width: bounds.width, height: bounds.height - PinButton.lettersLabelHeight))
             lettersLabel.frame = CGRect(origin: CGPoint(x: bounds.origin.x, y: digitLabel.frame.height), size: CGSize(width: bounds.width, height: bounds.height - digitLabel.frame.height))
         }
-        
-        // button frame and target action
-        addTarget(self, action: #selector(onTap), for: .touchUpInside)
-    }
-    
-    dynamic private func onTap() {
-        animateTap()
-    }
-    
-    private func animateTap() {
-        // add ripple subview
-        let ripple = UIView(frame: bounds)
-        ripple.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-        ripple.layer.cornerRadius = ripple.bounds.size.height / 2
-        ripple.isUserInteractionEnabled = false
-        addSubview(ripple)
-        
-        // add stationary circle
-        let stationaryCircle = UIView(frame: bounds.insetBy(dx: bounds.width * (-0.2), dy: bounds.height * (-0.2)))
-        stationaryCircle.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-        stationaryCircle.layer.cornerRadius = stationaryCircle.bounds.size.height / 2
-        stationaryCircle.isUserInteractionEnabled = false
-        addSubview(stationaryCircle)
-        
-        // start CAAnimation Transaction
-        CATransaction.begin()
-        CATransaction.setCompletionBlock({
-            // remove views once animation has completed
-            ripple.removeFromSuperview()
-            stationaryCircle.removeFromSuperview()
-        })
-        
-        // prepare scale animation
-        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-        scaleAnimation.fromValue = 0.35
-        scaleAnimation.toValue = 1.5
-        
-        // prepare opacity animation
-        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.fromValue = 1.0
-        opacityAnimation.toValue = 0.0
-        opacityAnimation.isRemovedOnCompletion = false
-        opacityAnimation.fillMode = kCAFillModeForwards
-        
-        // run both scale and opacity animations in a group for ripple layer
-        let rippleAnimation = CAAnimationGroup()
-        rippleAnimation.duration = 0.6
-        rippleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        rippleAnimation.isRemovedOnCompletion = false
-        rippleAnimation.fillMode = kCAFillModeForwards
-        rippleAnimation.animations = [scaleAnimation, opacityAnimation]
-        
-        // add animations to layers
-        ripple.layer.add(rippleAnimation, forKey: "rippleLayer")
-        stationaryCircle.layer.add(opacityAnimation, forKey: "stationaryCircleLayer")
-        
-        // commit CAAnimation Transaction
-        CATransaction.commit()
     }
     
 }

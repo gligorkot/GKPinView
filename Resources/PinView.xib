@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,6 +24,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V43-9H-i4h">
                     <rect key="frame" x="20" y="60" width="335" height="21"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="NQD-iY-WgY"/>
                     </constraints>
@@ -34,6 +35,7 @@
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tO2-FP-QBz" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="141.5" y="111" width="8" height="8"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="8" id="A8b-pE-cB5"/>
                         <constraint firstAttribute="height" constant="8" id="oNs-sx-Oad"/>
@@ -45,6 +47,7 @@
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-YN-tUu" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="169.5" y="111" width="8" height="8"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="8" id="azf-dE-Cu0"/>
                         <constraint firstAttribute="height" constant="8" id="nmg-VN-CKQ"/>
@@ -56,6 +59,7 @@
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0p-gk-Vfi" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="197.5" y="111" width="8" height="8"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="8" id="HHt-KX-bLQ"/>
                         <constraint firstAttribute="width" constant="8" id="ZuE-Xg-zSk"/>
@@ -67,6 +71,7 @@
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-er-8qo" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="225.5" y="111" width="8" height="8"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="8" id="VwG-Im-P3o"/>
                         <constraint firstAttribute="width" constant="8" id="cp6-mN-kpt"/>
@@ -78,6 +83,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-Yv-7Vu" userLabel="1" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="45" y="164" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="WmA-1K-rbf"/>
                         <constraint firstAttribute="width" constant="70" id="x5q-qR-wQV"/>
@@ -94,6 +100,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9I-ru-hzC" userLabel="2" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="152" y="164" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="3VZ-SE-xGM"/>
                         <constraint firstAttribute="width" constant="70" id="Pac-d7-AI1"/>
@@ -111,6 +118,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kf-oZ-TIQ" userLabel="3" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="259" y="164" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="HIG-1j-RrS"/>
                         <constraint firstAttribute="height" constant="70" id="wm7-WL-G9R"/>
@@ -127,6 +135,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-ag-sUX" userLabel="4" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="45" y="244" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="DTI-B3-yzI"/>
                         <constraint firstAttribute="height" constant="70" id="Wlv-xq-opc"/>
@@ -144,6 +153,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-MW-rET" userLabel="5" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="152" y="244" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="VK8-Ki-hFZ"/>
                         <constraint firstAttribute="width" constant="70" id="cpw-ol-ZLO"/>
@@ -160,6 +170,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiS-iG-fhd" userLabel="6" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="259" y="244" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="Rdj-Mg-tUi"/>
                         <constraint firstAttribute="height" constant="70" id="XTS-mT-DA3"/>
@@ -176,6 +187,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSG-tB-uMY" userLabel="7" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="45" y="324" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="5og-oP-ioV"/>
                         <constraint firstAttribute="height" constant="70" id="5ro-IS-2r3"/>
@@ -192,6 +204,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-1u-a1I" userLabel="8" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="152" y="324" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="3PE-8t-Ate"/>
                         <constraint firstAttribute="width" constant="70" id="lMc-Ps-AKX"/>
@@ -208,6 +221,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-Y9-471" userLabel="9" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="259" y="324" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="J0e-s8-HpG"/>
                         <constraint firstAttribute="height" constant="70" id="QsV-rN-rmL"/>
@@ -225,6 +239,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5i-cY-CUs" userLabel="0" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
                     <rect key="frame" x="152" y="404" width="70" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="HWQ-Pe-ftz"/>
                         <constraint firstAttribute="height" constant="70" id="IB2-6a-dql"/>
@@ -238,6 +253,36 @@
                         <action selector="keypadTapped:" destination="-1" eventType="touchUpInside" id="RYe-9l-dfe"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gR-Jh-LSw" userLabel="Backspace" customClass="PinBackspaceButton" customModule="GKPinView" customModuleProvider="target">
+                    <rect key="frame" x="259" y="404" width="70" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="73A-iv-5ze"/>
+                        <constraint firstAttribute="width" constant="70" id="Vcl-TK-OmX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="digit">
+                            <integer key="value" value="9"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="hideKeypadLetters" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="backspaceTapped:" destination="-1" eventType="touchUpInside" id="ON6-zV-Yr7"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-gM-Uf9">
+                    <rect key="frame" x="254" y="494" width="80" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Qf4-2u-nEQ"/>
+                    </constraints>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -248,11 +293,13 @@
                 <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="14" id="4qc-ab-aE1"/>
                 <constraint firstItem="fiS-iG-fhd" firstAttribute="leading" secondItem="1kf-oZ-TIQ" secondAttribute="leading" id="9nQ-AV-vLP"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="12" id="C8f-Ge-Sen"/>
+                <constraint firstItem="gRx-gM-Uf9" firstAttribute="centerX" secondItem="1b2-Y9-471" secondAttribute="centerX" id="FOY-Mp-HWq"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="bottom" constant="10" id="Grx-ev-kmK"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="leading" secondItem="fiS-iG-fhd" secondAttribute="leading" id="JY4-ih-bCj"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="top" secondItem="fiS-iG-fhd" secondAttribute="bottom" constant="10" id="Kax-b8-VxZ"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="leading" secondItem="PyJ-1u-a1I" secondAttribute="leading" id="LD5-8r-2Js"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="bottom" constant="10" id="Mp6-Io-cPr"/>
+                <constraint firstAttribute="bottom" secondItem="gRx-gM-Uf9" secondAttribute="bottom" constant="10" id="NLM-RQ-PJO"/>
                 <constraint firstAttribute="trailing" secondItem="V43-9H-i4h" secondAttribute="trailing" constant="20" id="Pfg-Be-mm5"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="leading" secondItem="xfx-MW-rET" secondAttribute="leading" id="Prs-vO-Akr"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="20" id="RKE-Xv-56p"/>
@@ -269,9 +316,11 @@
                 <constraint firstItem="V43-9H-i4h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="f27-rv-FHl"/>
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="ZfB-Yv-7Vu" secondAttribute="bottom" constant="10" id="i6x-xl-TdM"/>
                 <constraint firstItem="1kf-oZ-TIQ" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="45" id="mHV-PO-1gk"/>
+                <constraint firstItem="4gR-Jh-LSw" firstAttribute="top" secondItem="1b2-Y9-471" secondAttribute="bottom" constant="10" id="nkd-ms-7a6"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="leading" id="oiI-2Z-rn2"/>
                 <constraint firstItem="XiW-er-8qo" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="uJ7-Bg-qiL"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="udz-am-C8h"/>
+                <constraint firstItem="4gR-Jh-LSw" firstAttribute="leading" secondItem="1b2-Y9-471" secondAttribute="leading" id="vdz-JP-y1e"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="bottom" constant="10" id="z4d-6n-9Xu"/>
                 <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" constant="37" id="zTS-Ov-cge"/>
             </constraints>

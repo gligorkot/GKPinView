@@ -13,12 +13,6 @@ final class PinBubble: UIView {
     
     private let borderSize: CGFloat = 1.5
     
-    @IBInspectable var color: UIColor = .white {
-        didSet {
-            draw(bounds)
-        }
-    }
-    
     @IBInspectable var isFilled: Bool = false {
         didSet {
             draw(bounds)
@@ -32,12 +26,12 @@ final class PinBubble: UIView {
 
     override func draw(_ rect: CGRect) {
         let borderLayer = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
-        color.setFill()
+        tintColor.setFill()
         borderLayer.fill()
         
         let fillLayer = UIBezierPath(ovalIn: CGRect(x: borderSize, y: borderSize, width: bounds.width - borderSize * 2, height: bounds.height - borderSize * 2))
         if isFilled {
-            color.withAlphaComponent(0.7).setFill()
+            tintColor.withAlphaComponent(0.7).setFill()
         } else {
             UIColor.clear.setFill()
         }

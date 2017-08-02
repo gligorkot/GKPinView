@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		86CEAF111F2EE02A0072996D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEAF101F2EE02A0072996D /* AppDelegate.swift */; };
-		86CEAF131F2EE02A0072996D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEAF121F2EE02A0072996D /* ViewController.swift */; };
+		86CEAF131F2EE02A0072996D /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEAF121F2EE02A0072996D /* PinViewController.swift */; };
 		86CEAF161F2EE02A0072996D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86CEAF141F2EE02A0072996D /* Main.storyboard */; };
 		86CEAF181F2EE02A0072996D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86CEAF171F2EE02A0072996D /* Assets.xcassets */; };
 		86CEAF1B1F2EE02A0072996D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86CEAF191F2EE02A0072996D /* LaunchScreen.storyboard */; };
+		86EFB3BA1F3155040073C60F /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EFB3B91F3155040073C60F /* ExampleViewController.swift */; };
 		F6618979F4574EEF88CEA770 /* Pods_GKPinViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0907F307A4C0A311E86E6281 /* Pods_GKPinViewExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +21,12 @@
 		5FFC98F361A0A8DE6F05B64F /* Pods-GKPinViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKPinViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKPinViewExample/Pods-GKPinViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		86CEAF0D1F2EE02A0072996D /* GKPinViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKPinViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CEAF101F2EE02A0072996D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		86CEAF121F2EE02A0072996D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		86CEAF121F2EE02A0072996D /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
 		86CEAF151F2EE02A0072996D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86CEAF171F2EE02A0072996D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86CEAF1A1F2EE02A0072996D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86CEAF1C1F2EE02A0072996D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86EFB3B91F3155040073C60F /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		C29419A8A9102CDEEC2A9ECD /* Pods-GKPinViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKPinViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKPinViewExample/Pods-GKPinViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,11 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				86CEAF101F2EE02A0072996D /* AppDelegate.swift */,
-				86CEAF121F2EE02A0072996D /* ViewController.swift */,
+				86CEAF121F2EE02A0072996D /* PinViewController.swift */,
 				86CEAF141F2EE02A0072996D /* Main.storyboard */,
 				86CEAF171F2EE02A0072996D /* Assets.xcassets */,
 				86CEAF191F2EE02A0072996D /* LaunchScreen.storyboard */,
 				86CEAF1C1F2EE02A0072996D /* Info.plist */,
+				86EFB3B91F3155040073C60F /* ExampleViewController.swift */,
 			);
 			path = GKPinViewExample;
 			sourceTree = "<group>";
@@ -217,8 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86CEAF131F2EE02A0072996D /* ViewController.swift in Sources */,
+				86CEAF131F2EE02A0072996D /* PinViewController.swift in Sources */,
 				86CEAF111F2EE02A0072996D /* AppDelegate.swift in Sources */,
+				86EFB3BA1F3155040073C60F /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +392,7 @@
 				86CEAF211F2EE02A0072996D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

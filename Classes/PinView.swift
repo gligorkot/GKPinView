@@ -8,8 +8,12 @@
 
 import UIKit
 
+public protocol PinViewDelegate: class {
+    func pinViewDidTapCancel(pinView: PinView)
+}
+
 @IBDesignable
-final class PinView: UIView {
+public final class PinView: UIView {
     
     // MARK: - Outlets
     @IBOutlet weak var rootView: UIView!
@@ -23,20 +27,23 @@ final class PinView: UIView {
     // MARK: - State
     fileprivate var digitsRemaining = 4
     
+    // MARK: - Delegate
+    public weak var delegate: PinViewDelegate?
+    
     // MARK: - Initialisers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
-        
+
     }
 
 }
@@ -60,14 +67,25 @@ private extension PinView {
     }
     
     // MARK: IBActions
-    @IBAction func keypadTapped(_ sender: PinButton) {
-        if digitsRemaining > 0 {
-            digitsRemaining -= 1
-            fillBubbles()
+    @IBAction func cancelTapped(_ sender: UIButton) {
+        delegate?.pinViewDidTapCancel(pinView: self)
+    }
+    
+    @IBAction func backspaceTapped(_ sender: UIButton) {
+        if digitsRemaining < 4 {
+            digitsRemaining += 1
+            updateBubbles()
         }
     }
     
-    func fillBubbles() {
+    @IBAction func keypadTapped(_ sender: PinButton) {
+        if digitsRemaining > 0 {
+            digitsRemaining -= 1
+            updateBubbles()
+        }
+    }
+    
+    func updateBubbles() {
         switch digitsRemaining {
         case 4:
             pinBubbleOne.isFilled = false
