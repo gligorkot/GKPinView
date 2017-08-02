@@ -43,7 +43,7 @@ public final class PinView: UIView {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        
+
     }
 
 }
@@ -71,14 +71,21 @@ private extension PinView {
         delegate?.pinViewDidTapCancel(pinView: self)
     }
     
-    @IBAction func keypadTapped(_ sender: PinButton) {
-        if digitsRemaining > 0 {
-            digitsRemaining -= 1
-            fillBubbles()
+    @IBAction func backspaceTapped(_ sender: UIButton) {
+        if digitsRemaining < 4 {
+            digitsRemaining += 1
+            updateBubbles()
         }
     }
     
-    func fillBubbles() {
+    @IBAction func keypadTapped(_ sender: PinButton) {
+        if digitsRemaining > 0 {
+            digitsRemaining -= 1
+            updateBubbles()
+        }
+    }
+    
+    func updateBubbles() {
         switch digitsRemaining {
         case 4:
             pinBubbleOne.isFilled = false
