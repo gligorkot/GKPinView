@@ -15,6 +15,7 @@
                 <outlet property="pinBubbleThree" destination="A0p-gk-Vfi" id="Bc5-0X-tXE"/>
                 <outlet property="pinBubbleTwo" destination="GMG-YN-tUu" id="QQf-Wk-dDH"/>
                 <outlet property="rootView" destination="iN0-l3-epB" id="TNl-Jd-wFx"/>
+                <outlet property="titleLabel" destination="V43-9H-i4h" id="Eam-S7-21L"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

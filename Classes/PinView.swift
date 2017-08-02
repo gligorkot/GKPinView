@@ -17,12 +17,18 @@ public final class PinView: UIView {
     
     // MARK: - Outlets
     @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pinBubbleOne: PinBubble!
     @IBOutlet weak var pinBubbleTwo: PinBubble!
     @IBOutlet weak var pinBubbleThree: PinBubble!
     @IBOutlet weak var pinBubbleFour: PinBubble!
     
     // MARK: - IBInspectables
+    @IBInspectable public var title: String = "Enter Passcode" {
+        didSet {
+            titleLabel.text = title
+        }
+    }
     
     // MARK: - State
     fileprivate var digitsRemaining = 4
