@@ -30,10 +30,16 @@ public final class PinView: UIView {
             titleLabel.text = title
         }
     }
-  
+    
     @IBInspectable public var blurBackground: Bool = false {
         didSet {
             visualEffectBackground.isHidden = !blurBackground
+        }
+    }
+    
+    @IBInspectable public override var tintColor: UIColor! {
+        didSet {
+            updateViewsTintColor()
         }
     }
     
@@ -60,11 +66,6 @@ public final class PinView: UIView {
         super.init(coder: aDecoder)
         setupView()
     }
-    
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
 
 }
 
@@ -77,6 +78,8 @@ private extension PinView {
         let view = viewFromNib()
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // update views tint color to the self.tintColor
+        updateViewsTintColor()
         addSubview(view)
     }
     
@@ -87,6 +90,13 @@ private extension PinView {
             return view
         }
         fatalError("Could not initialise PinView from nib.")
+    }
+    
+    func updateViewsTintColor() {
+        for subview in rootView.subviews {
+            subview.tintColor = tintColor
+        }
+        titleLabel.textColor = tintColor
     }
     
     // MARK: IBActions

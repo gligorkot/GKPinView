@@ -11,14 +11,14 @@ extension UIButton {
     func animateTap() {
         // add ripple subview
         let ripple = UIView(frame: bounds)
-        ripple.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        ripple.backgroundColor = tintColor.withAlphaComponent(0.3)
         ripple.layer.cornerRadius = ripple.bounds.size.height / 2
         ripple.isUserInteractionEnabled = false
         addSubview(ripple)
         
         // add stationary circle
         let stationaryCircle = UIView(frame: bounds.insetBy(dx: bounds.width * (-0.2), dy: bounds.height * (-0.2)))
-        stationaryCircle.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        stationaryCircle.backgroundColor = tintColor.withAlphaComponent(0.3)
         stationaryCircle.layer.cornerRadius = stationaryCircle.bounds.size.height / 2
         stationaryCircle.isUserInteractionEnabled = false
         addSubview(stationaryCircle)

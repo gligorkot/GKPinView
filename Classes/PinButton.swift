@@ -31,6 +31,13 @@ final class PinButton: UIButton {
         }
     }
     
+    override var tintColor: UIColor! {
+        didSet {
+            digitLabel.textColor = tintColor
+            lettersLabel.textColor = tintColor
+        }
+    }
+    
     @IBInspectable var digit: Int = 0 {
         didSet {
             digitLabel.text = "\(digit)"

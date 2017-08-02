@@ -286,15 +286,14 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="Qf4-2u-nEQ"/>
                     </constraints>
-                    <state key="normal" title="Cancel">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="normal" title="Cancel"/>
                     <connections>
                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="1kf-oZ-TIQ" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="trailing" constant="37" id="2bR-ao-dKz"/>
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="leading" id="2mC-ni-VWH"/>
