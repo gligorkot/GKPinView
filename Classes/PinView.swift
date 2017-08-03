@@ -108,11 +108,9 @@ public final class PinView: UIView {
                         if isCorrect {
                             delegate.pinViewDidSucceed(pinView: self)
                         } else {
-                            self.enteredPin = ""
-                            self.updateBubbles()
+                            self.resetPinViewState()
                             self.shakeBubbles()
                             delegate.pinViewDidFailWithIncorrectPin(pinView: self)
-                            self.hideLoading()
                         }
                     }
                 })
@@ -133,6 +131,15 @@ public final class PinView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
+    }
+    
+    /**
+     This function will reset the entered pin and hide the loading indicator
+     */
+    public func resetPinViewState() {
+        self.enteredPin = ""
+        self.updateBubbles()
+        self.hideLoading()
     }
 
 }
