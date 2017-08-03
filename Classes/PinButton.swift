@@ -15,7 +15,7 @@ final class PinButton: UIButton {
     private static let lettersFontSize: CGFloat = 13
     private static let lettersLabelHeight: CGFloat = 25
     
-    @IBInspectable var keypadFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
+    var keypadFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
         didSet {
             digitLabel.font = keypadFont.withSize(PinButton.digitFontSize)
             lettersLabel.font = keypadFont.withSize(PinButton.lettersFontSize)

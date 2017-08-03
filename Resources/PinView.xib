@@ -10,6 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinView" customModule="GKPinView" customModuleProvider="target">
             <connections>
+                <outlet property="buttonEight" destination="PyJ-1u-a1I" id="dLn-pU-o5k"/>
+                <outlet property="buttonFive" destination="xfx-MW-rET" id="qxb-Ta-6i1"/>
+                <outlet property="buttonFour" destination="8xa-ag-sUX" id="3Jr-9N-MVA"/>
+                <outlet property="buttonNine" destination="1b2-Y9-471" id="mgl-vt-4sR"/>
+                <outlet property="buttonOne" destination="ZfB-Yv-7Vu" id="D2G-YC-cV0"/>
+                <outlet property="buttonSeven" destination="WSG-tB-uMY" id="m8t-TU-X1w"/>
+                <outlet property="buttonSix" destination="fiS-iG-fhd" id="PnF-t8-CHi"/>
+                <outlet property="buttonThree" destination="1kf-oZ-TIQ" id="oTD-nJ-Dd6"/>
+                <outlet property="buttonTwo" destination="E9I-ru-hzC" id="mBZ-qG-iyH"/>
+                <outlet property="buttonZero" destination="G5i-cY-CUs" id="CvK-k0-uoA"/>
+                <outlet property="cancelButton" destination="gRx-gM-Uf9" id="67w-qX-CZo"/>
                 <outlet property="loadingIndicator" destination="6kl-37-etI" id="ZfB-iD-G4i"/>
                 <outlet property="pinBubbleFour" destination="XiW-er-8qo" id="DfC-DW-cqT"/>
                 <outlet property="pinBubbleOne" destination="tO2-FP-QBz" id="dRf-aQ-Pt3"/>
@@ -287,6 +298,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="Qf4-2u-nEQ"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Cancel"/>
                     <connections>
                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>

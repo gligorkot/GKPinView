@@ -81,6 +81,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Futura"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

@@ -58,6 +58,17 @@ public final class PinView: UIView {
     @IBOutlet weak var pinBubbleTwo: PinBubble!
     @IBOutlet weak var pinBubbleThree: PinBubble!
     @IBOutlet weak var pinBubbleFour: PinBubble!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var buttonOne: PinButton!
+    @IBOutlet weak var buttonTwo: PinButton!
+    @IBOutlet weak var buttonThree: PinButton!
+    @IBOutlet weak var buttonFour: PinButton!
+    @IBOutlet weak var buttonFive: PinButton!
+    @IBOutlet weak var buttonSix: PinButton!
+    @IBOutlet weak var buttonSeven: PinButton!
+    @IBOutlet weak var buttonEight: PinButton!
+    @IBOutlet weak var buttonNine: PinButton!
+    @IBOutlet weak var buttonZero: PinButton!
     
     // MARK: - IBInspectables
     /**
@@ -75,6 +86,13 @@ public final class PinView: UIView {
     @IBInspectable public var blurBackground: Bool = false {
         didSet {
             visualEffectBackground.isHidden = !blurBackground
+        }
+    }
+    
+    @IBInspectable public var fontName: String = "System" {
+        didSet {
+            // font size is not important so we just init the font with size 10
+            updateKeypadFont(UIFont(name: fontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
         }
     }
     
@@ -172,6 +190,21 @@ private extension PinView {
             subview.tintColor = tintColor
         }
         titleLabel.textColor = tintColor
+    }
+    
+    func updateKeypadFont(_ font: UIFont) {
+        buttonOne.keypadFont = font
+        buttonTwo.keypadFont = font
+        buttonThree.keypadFont = font
+        buttonFour.keypadFont = font
+        buttonFive.keypadFont = font
+        buttonSix.keypadFont = font
+        buttonSeven.keypadFont = font
+        buttonEight.keypadFont = font
+        buttonNine.keypadFont = font
+        buttonZero.keypadFont = font
+        cancelButton.titleLabel?.font = font.withSize(UIFont.systemFontSize)
+        titleLabel.font = font.withSize(titleLabel.font.pointSize)
     }
     
     // MARK: IBActions
