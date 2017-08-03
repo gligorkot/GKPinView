@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinView" customModule="GKPinView" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicator" destination="6kl-37-etI" id="ZfB-iD-G4i"/>
                 <outlet property="pinBubbleFour" destination="XiW-er-8qo" id="DfC-DW-cqT"/>
                 <outlet property="pinBubbleOne" destination="tO2-FP-QBz" id="dRf-aQ-Pt3"/>
                 <outlet property="pinBubbleThree" destination="A0p-gk-Vfi" id="Bc5-0X-tXE"/>
@@ -291,6 +292,9 @@
                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>
                     </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-37-etI">
+                    <rect key="frame" x="177" y="58" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -326,6 +330,7 @@
                 <constraint firstItem="XgL-zH-Ncz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eoo-xx-K8y"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="f27-rv-FHl"/>
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="ZfB-Yv-7Vu" secondAttribute="bottom" constant="10" id="i6x-xl-TdM"/>
+                <constraint firstItem="6kl-37-etI" firstAttribute="centerY" secondItem="V43-9H-i4h" secondAttribute="centerY" id="inl-yW-Iwr"/>
                 <constraint firstAttribute="trailing" secondItem="XgL-zH-Ncz" secondAttribute="trailing" id="jZu-Fw-VEU"/>
                 <constraint firstItem="1kf-oZ-TIQ" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="45" id="mHV-PO-1gk"/>
                 <constraint firstItem="XgL-zH-Ncz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mlK-SJ-N2N"/>
@@ -334,6 +339,7 @@
                 <constraint firstItem="XiW-er-8qo" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="uJ7-Bg-qiL"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="udz-am-C8h"/>
                 <constraint firstItem="4gR-Jh-LSw" firstAttribute="leading" secondItem="1b2-Y9-471" secondAttribute="leading" id="vdz-JP-y1e"/>
+                <constraint firstItem="6kl-37-etI" firstAttribute="centerX" secondItem="V43-9H-i4h" secondAttribute="centerX" id="ym2-SN-cZr"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="bottom" constant="10" id="z4d-6n-9Xu"/>
                 <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" constant="37" id="zTS-Ov-cge"/>
             </constraints>
