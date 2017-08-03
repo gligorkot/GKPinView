@@ -1,7 +1,7 @@
 language: swift
 osx_image: xcode8.3
 before_script:
-  - pod lib lint --verbose --fail-fast --allow-warnings
+  - pod lib lint --verbose --fail-fast
   - pod repo update
 script:
   - cd GKPinViewExample && pod install
