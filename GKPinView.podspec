@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'GKPinView'
-  s.version               = '0.9.1'
+  s.version               = '0.9.2'
   s.summary               = 'A lock screen Pin/Passcode View for iPhone and iPad.'
   s.description           = <<-DESC
                             * A customisable Pin/Passcode View for iPhone or iPad
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.source_files          = 'Classes', 'Classes/*.{swift}'
   s.resources             = 'Resources/*.{xib}'
-  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '3' }
+  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '4' }
 
   s.frameworks            = 'UIKit'
   s.requires_arc          = true

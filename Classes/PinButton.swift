@@ -92,7 +92,7 @@ final class PinButton: UIButton {
         addTarget(self, action: #selector(onTap), for: .touchUpInside)
     }
     
-    dynamic private func onTap() {
+    @objc private func onTap() {
         animateTap()
     }
 
