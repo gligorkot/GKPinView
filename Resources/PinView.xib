@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,82 +34,82 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-zH-Ncz">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7iU-gB-PSG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <blurEffect style="dark"/>
                 </visualEffectView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V43-9H-i4h">
-                    <rect key="frame" x="20" y="58" width="335" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V43-9H-i4h">
+                    <rect key="frame" x="20" y="25" width="335" height="21"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="NQD-iY-WgY"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tO2-FP-QBz" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="137.5" y="109" width="10" height="10"/>
+                    <rect key="frame" x="141" y="93" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="10" id="A8b-pE-cB5"/>
-                        <constraint firstAttribute="height" constant="10" id="oNs-sx-Oad"/>
+                        <constraint firstAttribute="width" constant="12" id="A8b-pE-cB5"/>
+                        <constraint firstAttribute="height" constant="12" id="oNs-sx-Oad"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-YN-tUu" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="167.5" y="109" width="10" height="10"/>
+                    <rect key="frame" x="168" y="93" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="10" id="azf-dE-Cu0"/>
-                        <constraint firstAttribute="height" constant="10" id="nmg-VN-CKQ"/>
+                        <constraint firstAttribute="width" constant="12" id="azf-dE-Cu0"/>
+                        <constraint firstAttribute="height" constant="12" id="nmg-VN-CKQ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0p-gk-Vfi" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="197.5" y="109" width="10" height="10"/>
+                    <rect key="frame" x="195" y="93" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="10" id="HHt-KX-bLQ"/>
-                        <constraint firstAttribute="width" constant="10" id="ZuE-Xg-zSk"/>
+                        <constraint firstAttribute="height" constant="12" id="HHt-KX-bLQ"/>
+                        <constraint firstAttribute="width" constant="12" id="ZuE-Xg-zSk"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-er-8qo" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="227.5" y="109" width="10" height="10"/>
+                    <rect key="frame" x="222" y="93" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="10" id="VwG-Im-P3o"/>
-                        <constraint firstAttribute="width" constant="10" id="cp6-mN-kpt"/>
+                        <constraint firstAttribute="height" constant="12" id="VwG-Im-P3o"/>
+                        <constraint firstAttribute="width" constant="12" id="cp6-mN-kpt"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-Yv-7Vu" userLabel="1" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="45" y="164" width="70" height="70"/>
+                    <rect key="frame" x="40" y="165" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="WmA-1K-rbf"/>
-                        <constraint firstAttribute="width" constant="70" id="x5q-qR-wQV"/>
+                        <constraint firstAttribute="height" constant="75" id="WmA-1K-rbf"/>
+                        <constraint firstAttribute="width" constant="75" id="x5q-qR-wQV"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -120,12 +121,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9I-ru-hzC" userLabel="2" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="152" y="164" width="70" height="70"/>
+                    <rect key="frame" x="150" y="165" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="3VZ-SE-xGM"/>
-                        <constraint firstAttribute="width" constant="70" id="Pac-d7-AI1"/>
+                        <constraint firstAttribute="height" constant="75" id="3VZ-SE-xGM"/>
+                        <constraint firstAttribute="width" constant="75" id="Pac-d7-AI1"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -138,12 +139,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kf-oZ-TIQ" userLabel="3" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="259" y="164" width="70" height="70"/>
+                    <rect key="frame" x="260" y="165" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="HIG-1j-RrS"/>
-                        <constraint firstAttribute="height" constant="70" id="wm7-WL-G9R"/>
+                        <constraint firstAttribute="width" constant="75" id="HIG-1j-RrS"/>
+                        <constraint firstAttribute="height" constant="75" id="wm7-WL-G9R"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -155,12 +156,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-ag-sUX" userLabel="4" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="45" y="244" width="70" height="70"/>
+                    <rect key="frame" x="40" y="255" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="DTI-B3-yzI"/>
-                        <constraint firstAttribute="height" constant="70" id="Wlv-xq-opc"/>
+                        <constraint firstAttribute="width" constant="75" id="DTI-B3-yzI"/>
+                        <constraint firstAttribute="height" constant="75" id="Wlv-xq-opc"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -173,12 +174,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-MW-rET" userLabel="5" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="152" y="244" width="70" height="70"/>
+                    <rect key="frame" x="150" y="255" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="VK8-Ki-hFZ"/>
-                        <constraint firstAttribute="width" constant="70" id="cpw-ol-ZLO"/>
+                        <constraint firstAttribute="height" constant="75" id="VK8-Ki-hFZ"/>
+                        <constraint firstAttribute="width" constant="75" id="cpw-ol-ZLO"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -190,12 +191,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiS-iG-fhd" userLabel="6" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="259" y="244" width="70" height="70"/>
+                    <rect key="frame" x="260" y="255" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="Rdj-Mg-tUi"/>
-                        <constraint firstAttribute="height" constant="70" id="XTS-mT-DA3"/>
+                        <constraint firstAttribute="width" constant="75" id="Rdj-Mg-tUi"/>
+                        <constraint firstAttribute="height" constant="75" id="XTS-mT-DA3"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -207,12 +208,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSG-tB-uMY" userLabel="7" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="45" y="324" width="70" height="70"/>
+                    <rect key="frame" x="40" y="345" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="5og-oP-ioV"/>
-                        <constraint firstAttribute="height" constant="70" id="5ro-IS-2r3"/>
+                        <constraint firstAttribute="width" constant="75" id="5og-oP-ioV"/>
+                        <constraint firstAttribute="height" constant="75" id="5ro-IS-2r3"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -224,12 +225,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-1u-a1I" userLabel="8" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="152" y="324" width="70" height="70"/>
+                    <rect key="frame" x="150" y="345" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="3PE-8t-Ate"/>
-                        <constraint firstAttribute="width" constant="70" id="lMc-Ps-AKX"/>
+                        <constraint firstAttribute="height" constant="75" id="3PE-8t-Ate"/>
+                        <constraint firstAttribute="width" constant="75" id="lMc-Ps-AKX"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -241,12 +242,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-Y9-471" userLabel="9" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="259" y="324" width="70" height="70"/>
+                    <rect key="frame" x="260" y="345" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="J0e-s8-HpG"/>
-                        <constraint firstAttribute="height" constant="70" id="QsV-rN-rmL"/>
+                        <constraint firstAttribute="width" constant="75" id="J0e-s8-HpG"/>
+                        <constraint firstAttribute="height" constant="75" id="QsV-rN-rmL"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -259,12 +260,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5i-cY-CUs" userLabel="0" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="152" y="404" width="70" height="70"/>
+                    <rect key="frame" x="150" y="435" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="HWQ-Pe-ftz"/>
-                        <constraint firstAttribute="height" constant="70" id="IB2-6a-dql"/>
+                        <constraint firstAttribute="width" constant="75" id="HWQ-Pe-ftz"/>
+                        <constraint firstAttribute="height" constant="75" id="IB2-6a-dql"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -276,12 +277,12 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gR-Jh-LSw" userLabel="Backspace" customClass="PinBackspaceButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="259" y="404" width="70" height="70"/>
+                    <rect key="frame" x="260" y="435" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="73A-iv-5ze"/>
-                        <constraint firstAttribute="width" constant="70" id="Vcl-TK-OmX"/>
+                        <constraint firstAttribute="height" constant="75" id="73A-iv-5ze"/>
+                        <constraint firstAttribute="width" constant="75" id="Vcl-TK-OmX"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="digit">
@@ -294,70 +295,70 @@
                     </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-gM-Uf9">
-                    <rect key="frame" x="254" y="494" width="80" height="30"/>
+                    <rect key="frame" x="40" y="435" width="75" height="75"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="Qf4-2u-nEQ"/>
+                        <constraint firstAttribute="height" constant="75" id="JNi-tJ-9Ht"/>
+                        <constraint firstAttribute="width" constant="75" id="Qf4-2u-nEQ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="Cancel"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                    <state key="normal" title="CANCEL"/>
                     <connections>
                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>
                     </connections>
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-37-etI">
-                    <rect key="frame" x="177" y="58" width="20" height="20"/>
+                    <rect key="frame" x="177" y="25" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="trailing" constant="37" id="2bR-ao-dKz"/>
+                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="trailing" constant="35" id="2bR-ao-dKz"/>
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="leading" id="2mC-ni-VWH"/>
                 <constraint firstItem="WSG-tB-uMY" firstAttribute="leading" secondItem="8xa-ag-sUX" secondAttribute="leading" id="3TV-ha-nz6"/>
                 <constraint firstItem="E9I-ru-hzC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3rG-IJ-bFf"/>
-                <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="15" id="4qc-ab-aE1"/>
+                <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="13.5" id="4qc-ab-aE1"/>
                 <constraint firstItem="fiS-iG-fhd" firstAttribute="leading" secondItem="1kf-oZ-TIQ" secondAttribute="leading" id="9nQ-AV-vLP"/>
-                <constraint firstItem="xfx-MW-rET" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="12" id="C8f-Ge-Sen"/>
-                <constraint firstItem="gRx-gM-Uf9" firstAttribute="centerX" secondItem="1b2-Y9-471" secondAttribute="centerX" id="FOY-Mp-HWq"/>
-                <constraint firstItem="xfx-MW-rET" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="bottom" constant="10" id="Grx-ev-kmK"/>
+                <constraint firstItem="xfx-MW-rET" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="bottom" constant="15" id="Grx-ev-kmK"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="leading" secondItem="fiS-iG-fhd" secondAttribute="leading" id="JY4-ih-bCj"/>
-                <constraint firstItem="1b2-Y9-471" firstAttribute="top" secondItem="fiS-iG-fhd" secondAttribute="bottom" constant="10" id="Kax-b8-VxZ"/>
+                <constraint firstItem="1b2-Y9-471" firstAttribute="top" secondItem="fiS-iG-fhd" secondAttribute="bottom" constant="15" id="Kax-b8-VxZ"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="leading" secondItem="PyJ-1u-a1I" secondAttribute="leading" id="LD5-8r-2Js"/>
-                <constraint firstItem="G5i-cY-CUs" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="bottom" constant="10" id="Mp6-Io-cPr"/>
-                <constraint firstAttribute="bottom" secondItem="gRx-gM-Uf9" secondAttribute="bottom" constant="10" id="NLM-RQ-PJO"/>
+                <constraint firstItem="G5i-cY-CUs" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="bottom" constant="15" id="Mp6-Io-cPr"/>
                 <constraint firstAttribute="trailing" secondItem="V43-9H-i4h" secondAttribute="trailing" constant="20" id="Pfg-Be-mm5"/>
                 <constraint firstAttribute="bottom" secondItem="XgL-zH-Ncz" secondAttribute="bottom" id="Pka-up-1YR"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="leading" secondItem="xfx-MW-rET" secondAttribute="leading" id="Prs-vO-Akr"/>
-                <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="20" id="RKE-Xv-56p"/>
-                <constraint firstItem="E9I-ru-hzC" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="45" id="RmP-Ax-bwT"/>
-                <constraint firstItem="GMG-YN-tUu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-15" id="UjX-0o-7Rn"/>
-                <constraint firstItem="A0p-gk-Vfi" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="WF3-hV-KdM"/>
-                <constraint firstItem="XiW-er-8qo" firstAttribute="leading" secondItem="A0p-gk-Vfi" secondAttribute="trailing" constant="20" id="WNX-DW-hfC"/>
-                <constraint firstItem="ZfB-Yv-7Vu" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="45" id="Zxi-RR-h3A"/>
+                <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="15" id="RKE-Xv-56p"/>
+                <constraint firstItem="E9I-ru-hzC" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="60" id="RmP-Ax-bwT"/>
+                <constraint firstItem="gRx-gM-Uf9" firstAttribute="top" secondItem="WSG-tB-uMY" secondAttribute="bottom" constant="15" id="SQi-oh-pTB"/>
+                <constraint firstItem="GMG-YN-tUu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-13.5" id="UjX-0o-7Rn"/>
+                <constraint firstAttribute="bottom" secondItem="G5i-cY-CUs" secondAttribute="bottom" constant="60" id="VeG-F2-AZX"/>
+                <constraint firstItem="A0p-gk-Vfi" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="WF3-hV-KdM"/>
+                <constraint firstItem="XiW-er-8qo" firstAttribute="leading" secondItem="A0p-gk-Vfi" secondAttribute="trailing" constant="15" id="WNX-DW-hfC"/>
+                <constraint firstItem="ZfB-Yv-7Vu" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="60" id="Zxi-RR-h3A"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bQ9-w9-wKm"/>
-                <constraint firstItem="fiS-iG-fhd" firstAttribute="top" secondItem="1kf-oZ-TIQ" secondAttribute="bottom" constant="10" id="ctG-hN-FWD"/>
-                <constraint firstItem="tO2-FP-QBz" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="d9h-an-P1H"/>
-                <constraint firstItem="xfx-MW-rET" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e3V-da-4yj"/>
-                <constraint firstItem="WSG-tB-uMY" firstAttribute="top" secondItem="8xa-ag-sUX" secondAttribute="bottom" constant="10" id="eQ8-B8-jSO"/>
+                <constraint firstItem="fiS-iG-fhd" firstAttribute="top" secondItem="1kf-oZ-TIQ" secondAttribute="bottom" constant="15" id="ctG-hN-FWD"/>
+                <constraint firstItem="tO2-FP-QBz" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="d9h-an-P1H"/>
+                <constraint firstItem="WSG-tB-uMY" firstAttribute="top" secondItem="8xa-ag-sUX" secondAttribute="bottom" constant="15" id="eQ8-B8-jSO"/>
                 <constraint firstItem="XgL-zH-Ncz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eoo-xx-K8y"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="f27-rv-FHl"/>
-                <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="ZfB-Yv-7Vu" secondAttribute="bottom" constant="10" id="i6x-xl-TdM"/>
+                <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="ZfB-Yv-7Vu" secondAttribute="bottom" constant="15" id="i6x-xl-TdM"/>
                 <constraint firstItem="6kl-37-etI" firstAttribute="centerY" secondItem="V43-9H-i4h" secondAttribute="centerY" id="inl-yW-Iwr"/>
                 <constraint firstAttribute="trailing" secondItem="XgL-zH-Ncz" secondAttribute="trailing" id="jZu-Fw-VEU"/>
-                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="45" id="mHV-PO-1gk"/>
+                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="60" id="mHV-PO-1gk"/>
                 <constraint firstItem="XgL-zH-Ncz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mlK-SJ-N2N"/>
-                <constraint firstItem="4gR-Jh-LSw" firstAttribute="top" secondItem="1b2-Y9-471" secondAttribute="bottom" constant="10" id="nkd-ms-7a6"/>
+                <constraint firstItem="4gR-Jh-LSw" firstAttribute="top" secondItem="1b2-Y9-471" secondAttribute="bottom" constant="15" id="nkd-ms-7a6"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="leading" id="oiI-2Z-rn2"/>
-                <constraint firstItem="XiW-er-8qo" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="uJ7-Bg-qiL"/>
-                <constraint firstItem="GMG-YN-tUu" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="30" id="udz-am-C8h"/>
+                <constraint firstItem="gRx-gM-Uf9" firstAttribute="leading" secondItem="WSG-tB-uMY" secondAttribute="leading" id="qcd-IK-6rM"/>
+                <constraint firstItem="XiW-er-8qo" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="uJ7-Bg-qiL"/>
+                <constraint firstItem="GMG-YN-tUu" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="udz-am-C8h"/>
                 <constraint firstItem="4gR-Jh-LSw" firstAttribute="leading" secondItem="1b2-Y9-471" secondAttribute="leading" id="vdz-JP-y1e"/>
                 <constraint firstItem="6kl-37-etI" firstAttribute="centerX" secondItem="V43-9H-i4h" secondAttribute="centerX" id="ym2-SN-cZr"/>
-                <constraint firstItem="PyJ-1u-a1I" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="bottom" constant="10" id="z4d-6n-9Xu"/>
-                <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" constant="37" id="zTS-Ov-cge"/>
+                <constraint firstItem="PyJ-1u-a1I" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="bottom" constant="15" id="z4d-6n-9Xu"/>
+                <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" constant="35" id="zTS-Ov-cge"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="25.5" y="52"/>
+            <point key="canvasLocation" x="25.5" y="34"/>
         </view>
     </objects>
 </document>

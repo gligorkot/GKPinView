@@ -11,14 +11,19 @@ import UIKit
 @IBDesignable
 final class PinButton: UIButton {
     
-    private static let digitFontSize: CGFloat = 35
-    private static let lettersFontSize: CGFloat = 13
-    private static let lettersLabelHeight: CGFloat = 25
+    private static let digitFontSize: CGFloat = 30
+    private static let lettersFontSize: CGFloat = 11
+    private static let lettersLabelHeight: CGFloat = 28
     
-    var keypadFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
+    var digitFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
         didSet {
-            digitLabel.font = keypadFont.withSize(PinButton.digitFontSize)
-            lettersLabel.font = keypadFont.withSize(PinButton.lettersFontSize)
+            digitLabel.font = digitFont.withSize(PinButton.digitFontSize)
+        }
+    }
+    
+    var lettersFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
+        didSet {
+            lettersLabel.font = lettersFont.withSize(PinButton.lettersFontSize)
         }
     }
     
@@ -104,12 +109,12 @@ final class PinButton: UIButton {
         
         // digit label customisations
         digitLabel.textColor = tintColor
-        digitLabel.font = keypadFont.withSize(PinButton.digitFontSize)
+        digitLabel.font = digitFont.withSize(PinButton.digitFontSize)
         digitLabel.textAlignment = .center
         
         // letters flabel customisations
         lettersLabel.textColor = tintColor
-        lettersLabel.font = keypadFont.withSize(PinButton.lettersFontSize)
+        lettersLabel.font = lettersFont.withSize(PinButton.lettersFontSize)
         lettersLabel.textAlignment = .center
             
         // digit and letters labels frames
