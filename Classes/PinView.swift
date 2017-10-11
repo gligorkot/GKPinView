@@ -315,6 +315,10 @@ private extension PinView {
         pinBubbleFour.shake()
     }
     
+    func hideCancelButton() {
+        cancelButton.isHidden = true
+    }
+    
 }
 
 private extension String {
