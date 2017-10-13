@@ -176,6 +176,13 @@ public final class PinView: UIView {
         self.hideLoading()
     }
 
+    /**
+     This function will hide the cancel button from the pin view
+     */
+    public func hideCancelButton() {
+        cancelButton.isHidden = true
+    }
+    
 }
 
 private extension PinView {
@@ -313,10 +320,6 @@ private extension PinView {
         pinBubbleTwo.shake()
         pinBubbleThree.shake()
         pinBubbleFour.shake()
-    }
-    
-    func hideCancelButton() {
-        cancelButton.isHidden = true
     }
     
 }
