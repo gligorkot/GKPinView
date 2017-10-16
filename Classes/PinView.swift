@@ -136,18 +136,20 @@ public final class PinView: UIView {
         didSet {
             if let delegate = delegate, enteredPin.length == 4 {
                 showLoading()
-                delegate.pinView(pinView: self, enteredPin: enteredPin, isCorrectPinBlock: { (isCorrect: Bool) in
-                    // force execute block on the main thread (as these functions change the UI), in case the user didn't do this
-                    DispatchQueue.main.async {
-                        if isCorrect {
-                            delegate.pinViewDidSucceed(pinView: self)
-                        } else {
-                            self.resetPinViewState()
-                            self.shakeBubbles()
-                            delegate.pinViewDidFailWithIncorrectPin(pinView: self)
+                DispatchQueue.global(qos: .userInitiated).async {
+                    delegate.pinView(pinView: self, enteredPin: self.enteredPin, isCorrectPinBlock: { (isCorrect: Bool) in
+                        // force execute block on the main thread (as these functions change the UI), in case the user didn't do this
+                        DispatchQueue.main.async {
+                            if isCorrect {
+                                delegate.pinViewDidSucceed(pinView: self)
+                            } else {
+                                self.resetPinViewState()
+                                self.shakeBubbles()
+                                delegate.pinViewDidFailWithIncorrectPin(pinView: self)
+                            }
                         }
-                    }
-                })
+                    })
+                }
             }
             updateBubbles()
         }
