@@ -34,19 +34,35 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-zH-Ncz">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7iU-gB-PSG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="570"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <blurEffect style="dark"/>
                 </visualEffectView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxF-uP-sGv" userLabel="Left Anchor View">
+                    <rect key="frame" x="0.0" y="115" width="122.5" height="75"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-rT-j1K" userLabel="Right Anchor View">
+                    <rect key="frame" x="197.5" y="115" width="122.5" height="75"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6L-GF-03G" userLabel="Pin Bubbles Anchor View">
+                    <rect key="frame" x="0.0" y="51" width="320" height="64"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="119" id="F87-vU-Y1o"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="e5R-QM-fKk"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V43-9H-i4h">
-                    <rect key="frame" x="20" y="25" width="335" height="21"/>
+                    <rect key="frame" x="20" y="30" width="280" height="21"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="NQD-iY-WgY"/>
@@ -56,7 +72,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tO2-FP-QBz" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="141" y="93" width="12" height="12"/>
+                    <rect key="frame" x="113.5" y="72.5" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -68,7 +84,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-YN-tUu" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="168" y="93" width="12" height="12"/>
+                    <rect key="frame" x="140.5" y="72.5" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -80,7 +96,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0p-gk-Vfi" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="195" y="93" width="12" height="12"/>
+                    <rect key="frame" x="167.5" y="72.5" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -92,7 +108,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-er-8qo" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="222" y="93" width="12" height="12"/>
+                    <rect key="frame" x="194.5" y="72.5" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -104,7 +120,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-Yv-7Vu" userLabel="1" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="40" y="165" width="75" height="75"/>
+                    <rect key="frame" x="24" y="115" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -121,7 +137,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9I-ru-hzC" userLabel="2" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="150" y="165" width="75" height="75"/>
+                    <rect key="frame" x="122.5" y="115" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -139,7 +155,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kf-oZ-TIQ" userLabel="3" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="260" y="165" width="75" height="75"/>
+                    <rect key="frame" x="221.5" y="115" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -156,7 +172,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-ag-sUX" userLabel="4" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="40" y="255" width="75" height="75"/>
+                    <rect key="frame" x="24" y="205" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -174,7 +190,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfx-MW-rET" userLabel="5" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="150" y="255" width="75" height="75"/>
+                    <rect key="frame" x="122.5" y="205" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -191,7 +207,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiS-iG-fhd" userLabel="6" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="260" y="255" width="75" height="75"/>
+                    <rect key="frame" x="221.5" y="205" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -208,7 +224,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSG-tB-uMY" userLabel="7" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="40" y="345" width="75" height="75"/>
+                    <rect key="frame" x="24" y="295" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -225,7 +241,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-1u-a1I" userLabel="8" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="150" y="345" width="75" height="75"/>
+                    <rect key="frame" x="122.5" y="295" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -242,7 +258,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-Y9-471" userLabel="9" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="260" y="345" width="75" height="75"/>
+                    <rect key="frame" x="221.5" y="295" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -260,7 +276,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5i-cY-CUs" userLabel="0" customClass="PinButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="150" y="435" width="75" height="75"/>
+                    <rect key="frame" x="122.5" y="385" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -277,7 +293,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gR-Jh-LSw" userLabel="Backspace" customClass="PinBackspaceButton" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="260" y="435" width="75" height="75"/>
+                    <rect key="frame" x="221.5" y="385" width="75" height="75"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -295,7 +311,7 @@
                     </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-gM-Uf9">
-                    <rect key="frame" x="40" y="435" width="75" height="75"/>
+                    <rect key="frame" x="24" y="385" width="75" height="75"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="JNi-tJ-9Ht"/>
                         <constraint firstAttribute="width" constant="75" id="Qf4-2u-nEQ"/>
@@ -307,58 +323,79 @@
                     </connections>
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-37-etI">
-                    <rect key="frame" x="177" y="25" width="20" height="20"/>
+                    <rect key="frame" x="149.5" y="30" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="trailing" constant="35" id="2bR-ao-dKz"/>
+                <constraint firstItem="XiW-er-8qo" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="top" id="0e5-x4-9EE"/>
+                <constraint firstItem="A0p-gk-Vfi" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="top" id="1PD-Vb-B8k"/>
+                <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" secondItem="kxF-uP-sGv" secondAttribute="trailing" id="2Wd-im-zCb"/>
+                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="E9I-ru-hzC" secondAttribute="trailing" constant="35" id="2bR-ao-dKz"/>
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="leading" id="2mC-ni-VWH"/>
                 <constraint firstItem="WSG-tB-uMY" firstAttribute="leading" secondItem="8xa-ag-sUX" secondAttribute="leading" id="3TV-ha-nz6"/>
                 <constraint firstItem="E9I-ru-hzC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3rG-IJ-bFf"/>
                 <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="13.5" id="4qc-ab-aE1"/>
+                <constraint firstItem="E9I-ru-hzC" firstAttribute="top" secondItem="O6L-GF-03G" secondAttribute="bottom" id="8hS-JT-Lqc"/>
+                <constraint firstItem="xfx-MW-rET" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="250" constant="46" id="9Kv-hj-82m"/>
+                <constraint firstAttribute="trailing" secondItem="O6L-GF-03G" secondAttribute="trailing" id="9YM-q8-bM4"/>
                 <constraint firstItem="fiS-iG-fhd" firstAttribute="leading" secondItem="1kf-oZ-TIQ" secondAttribute="leading" id="9nQ-AV-vLP"/>
+                <constraint firstItem="kxF-uP-sGv" firstAttribute="bottom" secondItem="E9I-ru-hzC" secondAttribute="bottom" id="BRy-OW-ZeY"/>
+                <constraint firstAttribute="trailing" secondItem="ka9-rT-j1K" secondAttribute="trailing" id="D0k-9X-Dbx"/>
+                <constraint firstItem="1b2-Y9-471" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="top" id="DRD-wK-x3V"/>
+                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="centerX" secondItem="ka9-rT-j1K" secondAttribute="centerX" priority="250" id="F4A-hP-UK9"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="bottom" constant="15" id="Grx-ev-kmK"/>
+                <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="top" id="HdZ-rd-m6H"/>
+                <constraint firstItem="tO2-FP-QBz" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="top" id="IJS-U7-Tym"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="leading" secondItem="fiS-iG-fhd" secondAttribute="leading" id="JY4-ih-bCj"/>
-                <constraint firstItem="1b2-Y9-471" firstAttribute="top" secondItem="fiS-iG-fhd" secondAttribute="bottom" constant="15" id="Kax-b8-VxZ"/>
+                <constraint firstItem="kxF-uP-sGv" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="top" id="KWr-ob-Nes"/>
+                <constraint firstItem="V43-9H-i4h" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" constant="1000" id="L8e-99-GTQ"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="leading" secondItem="PyJ-1u-a1I" secondAttribute="leading" id="LD5-8r-2Js"/>
+                <constraint firstItem="kxF-uP-sGv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MVi-gQ-Jup"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="bottom" constant="15" id="Mp6-Io-cPr"/>
+                <constraint firstItem="GMG-YN-tUu" firstAttribute="centerY" secondItem="O6L-GF-03G" secondAttribute="centerY" constant="-5" id="N0b-DP-d9S"/>
+                <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" priority="750" constant="15" id="NIi-8R-ph3"/>
+                <constraint firstItem="ZfB-Yv-7Vu" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="top" id="OZL-Pd-bOm"/>
+                <constraint firstItem="ka9-rT-j1K" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="trailing" id="PQF-gb-ZpV"/>
                 <constraint firstAttribute="trailing" secondItem="V43-9H-i4h" secondAttribute="trailing" constant="20" id="Pfg-Be-mm5"/>
                 <constraint firstAttribute="bottom" secondItem="XgL-zH-Ncz" secondAttribute="bottom" id="Pka-up-1YR"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="leading" secondItem="xfx-MW-rET" secondAttribute="leading" id="Prs-vO-Akr"/>
+                <constraint firstItem="ka9-rT-j1K" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="top" id="Q2m-Xr-74c"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="15" id="RKE-Xv-56p"/>
-                <constraint firstItem="E9I-ru-hzC" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="60" id="RmP-Ax-bwT"/>
-                <constraint firstItem="gRx-gM-Uf9" firstAttribute="top" secondItem="WSG-tB-uMY" secondAttribute="bottom" constant="15" id="SQi-oh-pTB"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-13.5" id="UjX-0o-7Rn"/>
-                <constraint firstAttribute="bottom" secondItem="G5i-cY-CUs" secondAttribute="bottom" constant="60" id="VeG-F2-AZX"/>
-                <constraint firstItem="A0p-gk-Vfi" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="WF3-hV-KdM"/>
+                <constraint firstAttribute="bottom" secondItem="G5i-cY-CUs" secondAttribute="bottom" priority="750" constant="20" id="VeG-F2-AZX"/>
                 <constraint firstItem="XiW-er-8qo" firstAttribute="leading" secondItem="A0p-gk-Vfi" secondAttribute="trailing" constant="15" id="WNX-DW-hfC"/>
-                <constraint firstItem="ZfB-Yv-7Vu" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="60" id="Zxi-RR-h3A"/>
+                <constraint firstItem="WSG-tB-uMY" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="top" id="WtN-RA-z0M"/>
+                <constraint firstItem="O6L-GF-03G" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" id="aoL-b9-XmX"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bQ9-w9-wKm"/>
-                <constraint firstItem="fiS-iG-fhd" firstAttribute="top" secondItem="1kf-oZ-TIQ" secondAttribute="bottom" constant="15" id="ctG-hN-FWD"/>
-                <constraint firstItem="tO2-FP-QBz" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="d9h-an-P1H"/>
-                <constraint firstItem="WSG-tB-uMY" firstAttribute="top" secondItem="8xa-ag-sUX" secondAttribute="bottom" constant="15" id="eQ8-B8-jSO"/>
+                <constraint firstItem="V43-9H-i4h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="30" id="cWB-Rz-6dU"/>
+                <constraint firstItem="fiS-iG-fhd" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="top" id="cdM-EH-57n"/>
                 <constraint firstItem="XgL-zH-Ncz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eoo-xx-K8y"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="f27-rv-FHl"/>
-                <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="ZfB-Yv-7Vu" secondAttribute="bottom" constant="15" id="i6x-xl-TdM"/>
+                <constraint firstItem="O6L-GF-03G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fde-gb-wRq"/>
+                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="top" id="fkv-Yr-MUa"/>
                 <constraint firstItem="6kl-37-etI" firstAttribute="centerY" secondItem="V43-9H-i4h" secondAttribute="centerY" id="inl-yW-Iwr"/>
                 <constraint firstAttribute="trailing" secondItem="XgL-zH-Ncz" secondAttribute="trailing" id="jZu-Fw-VEU"/>
-                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="bottom" constant="60" id="mHV-PO-1gk"/>
                 <constraint firstItem="XgL-zH-Ncz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mlK-SJ-N2N"/>
-                <constraint firstItem="4gR-Jh-LSw" firstAttribute="top" secondItem="1b2-Y9-471" secondAttribute="bottom" constant="15" id="nkd-ms-7a6"/>
+                <constraint firstItem="ZfB-Yv-7Vu" firstAttribute="centerX" secondItem="kxF-uP-sGv" secondAttribute="centerX" priority="250" id="oAu-TI-xQk"/>
+                <constraint firstItem="4gR-Jh-LSw" firstAttribute="top" secondItem="G5i-cY-CUs" secondAttribute="top" id="oJG-yH-5VC"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="leading" secondItem="E9I-ru-hzC" secondAttribute="leading" id="oiI-2Z-rn2"/>
                 <constraint firstItem="gRx-gM-Uf9" firstAttribute="leading" secondItem="WSG-tB-uMY" secondAttribute="leading" id="qcd-IK-6rM"/>
-                <constraint firstItem="XiW-er-8qo" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="uJ7-Bg-qiL"/>
-                <constraint firstItem="GMG-YN-tUu" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" constant="47" id="udz-am-C8h"/>
+                <constraint firstItem="1kf-oZ-TIQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E9I-ru-hzC" secondAttribute="trailing" priority="750" constant="15" id="tin-Gt-KDi"/>
+                <constraint firstItem="ZfB-Yv-7Vu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uH9-9d-6aU"/>
+                <constraint firstItem="gRx-gM-Uf9" firstAttribute="top" secondItem="G5i-cY-CUs" secondAttribute="top" id="uWK-RI-xkf"/>
                 <constraint firstItem="4gR-Jh-LSw" firstAttribute="leading" secondItem="1b2-Y9-471" secondAttribute="leading" id="vdz-JP-y1e"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="G5i-cY-CUs" secondAttribute="bottom" priority="900" constant="1000" id="wWv-rJ-leh"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1kf-oZ-TIQ" secondAttribute="trailing" constant="20" id="wvt-LV-hLA"/>
+                <constraint firstItem="ka9-rT-j1K" firstAttribute="bottom" secondItem="E9I-ru-hzC" secondAttribute="bottom" id="yGQ-HO-knO"/>
                 <constraint firstItem="6kl-37-etI" firstAttribute="centerX" secondItem="V43-9H-i4h" secondAttribute="centerX" id="ym2-SN-cZr"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="bottom" constant="15" id="z4d-6n-9Xu"/>
-                <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" constant="35" id="zTS-Ov-cge"/>
+                <constraint firstItem="E9I-ru-hzC" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZfB-Yv-7Vu" secondAttribute="trailing" constant="35" id="zTS-Ov-cge"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="25.5" y="34"/>
+            <point key="canvasLocation" x="25" y="33.5"/>
         </view>
     </objects>
 </document>
