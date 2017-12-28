@@ -12,15 +12,15 @@ public protocol PinViewDelegate: class {
 
     /**
      Function gets called when the user taps the `Cancel` button on the PinView
-     
+
      - Parameters:
         - pinView: The `PinView` that called the delegate function
      */
     func pinViewDidTapCancel(pinView: PinView)
-    
+
     /**
      Function gets called when the user ends entering the 4 digit pin
-     
+
      - Parameters:
         - pinView: The `PinView` that called the delegate function
         - enteredPin: The 4 digit pin the user has entered as a `String`
@@ -28,18 +28,18 @@ public protocol PinViewDelegate: class {
         - isCorrect: The boolean that tells the `PinView` whether or not the entered pin is correct/valid
      */
     func pinView(pinView: PinView, enteredPin: String, isCorrectPinBlock: @escaping (_ isCorrect: Bool) -> ())
-    
+
     /**
      Function gets called when the user ends entering the 4 digit pin and the pin has been identified as a correct/valid pin
-     
+
      - Parameters:
         - pinView: The `PinView` that called the delegate function
      */
     func pinViewDidSucceed(pinView: PinView)
-    
+
     /**
      Function gets called when the user ends entering the 4 digit pin and the pin has been identified as an incorrect/invalid pin
-     
+
      - Parameters:
         - pinView: The `PinView` that called the delegate function
      */
@@ -48,7 +48,7 @@ public protocol PinViewDelegate: class {
 
 @IBDesignable
 public final class PinView: UIView {
-    
+
     // MARK: - Outlets
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var visualEffectBackground: UIVisualEffectView!
@@ -69,7 +69,7 @@ public final class PinView: UIView {
     @IBOutlet weak var buttonEight: PinButton!
     @IBOutlet weak var buttonNine: PinButton!
     @IBOutlet weak var buttonZero: PinButton!
-    
+
     // MARK: - IBInspectables
     /**
      The title showing at the top of the `PinView`
@@ -79,7 +79,7 @@ public final class PinView: UIView {
             titleLabel.text = title
         }
     }
-    
+
     /**
      The boolean value specifying whether or not the `PinView` will have a blurred background or not
     */
@@ -88,21 +88,21 @@ public final class PinView: UIView {
             visualEffectBackground.isHidden = !blurBackground
         }
     }
-    
+
     @IBInspectable public var fontName: String = "System" {
         didSet {
             // font size is not important so we just init the font with size 10
             updateKeypadFont(UIFont(name: fontName, size: 10) ?? UIFont.boldSystemFont(ofSize: 10))
         }
     }
-    
+
     @IBInspectable public var lettersFontName: String = "System" {
         didSet {
             // font size is not important so we just init the font with size 10
             updateLettersFont(UIFont(name: fontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
         }
     }
-    
+
     /**
      The color that controls the color of the pin bubbles
      */
@@ -111,7 +111,7 @@ public final class PinView: UIView {
             updateViewsTintColor()
         }
     }
-    
+
     /**
      The color that controls the color of the `PinView` elements
      */
@@ -120,7 +120,7 @@ public final class PinView: UIView {
             updateViewsTintColor()
         }
     }
-    
+
     // MARK: - Other properties
     /**
      The blur background effect style that will be applied, if and only if `blurBackground` property is set to `true`
@@ -130,7 +130,7 @@ public final class PinView: UIView {
             visualEffectBackground.effect = UIBlurEffect(style: blurBackgroundEffectStyle)
         }
     }
-    
+
     // MARK: - State
     fileprivate var enteredPin = "" {
         didSet {
@@ -154,21 +154,21 @@ public final class PinView: UIView {
             updateBubbles()
         }
     }
-    
+
     // MARK: - Delegate
     public weak var delegate: PinViewDelegate?
-    
+
     // MARK: - Initialisers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }
-    
+
     /**
      This function will reset the entered pin and hide the loading indicator
      */
@@ -184,11 +184,11 @@ public final class PinView: UIView {
     public func hideCancelButton() {
         cancelButton.isHidden = true
     }
-    
+
 }
 
 private extension PinView {
-    
+
     func setupView() {
         // make self background color clear
         backgroundColor = .clear
@@ -200,7 +200,7 @@ private extension PinView {
         updateViewsTintColor()
         addSubview(view)
     }
-    
+
     func viewFromNib() -> UIView {
         let bundle = Bundle(for: PinView.self)
         let nib = UINib(nibName: String(describing: PinView.self), bundle: bundle)
@@ -209,7 +209,7 @@ private extension PinView {
         }
         fatalError("Could not initialise PinView from nib.")
     }
-    
+
     func updateViewsTintColor() {
         for subview in rootView.subviews {
             subview.tintColor = tintColor
@@ -220,13 +220,13 @@ private extension PinView {
         pinBubbleThree.tintColor = bubblesTintColor
         pinBubbleFour.tintColor = bubblesTintColor
     }
-    
+
     func updateKeypadFont(_ font: UIFont) {
         var boldFont = font
         if let fontDescriptor = font.fontDescriptor.withSymbolicTraits(.traitBold) {
             boldFont = UIFont(descriptor: fontDescriptor, size: 10)
         }
-        
+
         buttonOne.digitFont = font
         buttonTwo.digitFont = font
         buttonThree.digitFont = font
@@ -240,7 +240,7 @@ private extension PinView {
         cancelButton.titleLabel?.font = font.withSize(cancelButton.titleLabel?.font.pointSize ?? 11)
         titleLabel.font = boldFont.withSize(titleLabel.font.pointSize)
     }
-    
+
     func updateLettersFont(_ font: UIFont) {
         buttonOne.lettersFont = font
         buttonTwo.lettersFont = font
@@ -253,24 +253,24 @@ private extension PinView {
         buttonNine.lettersFont = font
         buttonZero.lettersFont = font
     }
-    
+
     // MARK: IBActions
     @IBAction func cancelTapped(_ sender: UIButton) {
         delegate?.pinViewDidTapCancel(pinView: self)
     }
-    
+
     @IBAction func backspaceTapped(_ sender: UIButton) {
         if enteredPin.length > 0 {
             enteredPin.removeLastCharacter()
         }
     }
-    
+
     @IBAction func keypadTapped(_ sender: PinButton) {
         if enteredPin.length < 4 {
             enteredPin = "\(enteredPin)\(sender.digit)"
         }
     }
-    
+
     func updateBubbles() {
         switch enteredPin.length {
         case 0:
@@ -306,34 +306,34 @@ private extension PinView {
         pinBubbleThree.setNeedsDisplay()
         pinBubbleFour.setNeedsDisplay()
     }
-    
+
     func showLoading() {
         titleLabel.isHidden = true
         loadingIndicator.isHidden = false
     }
-    
+
     func hideLoading() {
         loadingIndicator.isHidden = true
         titleLabel.isHidden = false
     }
-    
+
     func shakeBubbles() {
         pinBubbleOne.shake()
         pinBubbleTwo.shake()
         pinBubbleThree.shake()
         pinBubbleFour.shake()
     }
-    
+
 }
 
 private extension String {
-    
+
     var length: Int {
-        return self.characters.count
+        return self.count
     }
     
     mutating func removeLastCharacter() {
         self.remove(at: self.index(before: self.endIndex))
     }
-    
+
 }
