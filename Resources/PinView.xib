@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,6 +22,7 @@
                 <outlet property="buttonTwo" destination="E9I-ru-hzC" id="mBZ-qG-iyH"/>
                 <outlet property="buttonZero" destination="G5i-cY-CUs" id="CvK-k0-uoA"/>
                 <outlet property="cancelButton" destination="gRx-gM-Uf9" id="67w-qX-CZo"/>
+                <outlet property="forgotMyPinButton" destination="0VJ-mW-DPn" id="lel-pW-YKp"/>
                 <outlet property="loadingIndicator" destination="6kl-37-etI" id="ZfB-iD-G4i"/>
                 <outlet property="pinBubbleFour" destination="XiW-er-8qo" id="DfC-DW-cqT"/>
                 <outlet property="pinBubbleOne" destination="tO2-FP-QBz" id="dRf-aQ-Pt3"/>
@@ -310,6 +311,21 @@
                         <action selector="backspaceTapped:" destination="-1" eventType="touchUpInside" id="ON6-zV-Yr7"/>
                     </connections>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0VJ-mW-DPn">
+                    <rect key="frame" x="24" y="385" width="75" height="75"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                    <state key="normal" title="FORGOT MY PIN"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.textAlignment">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancelOrForgotPinTapDown:" destination="-1" eventType="touchDown" id="vfD-id-u7B"/>
+                        <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="MVM-WO-1M0"/>
+                        <action selector="forgotMyPinTapped:" destination="-1" eventType="touchUpInside" id="qIY-IC-M0G"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-gM-Uf9">
                     <rect key="frame" x="24" y="385" width="75" height="75"/>
                     <constraints>
@@ -319,6 +335,7 @@
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                     <state key="normal" title="CANCEL"/>
                     <connections>
+                        <action selector="cancelOrForgotPinTapDown:" destination="-1" eventType="touchDown" id="eKw-S1-sse"/>
                         <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="B9G-BS-tNR"/>
                     </connections>
                 </button>
@@ -349,9 +366,11 @@
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="top" id="HdZ-rd-m6H"/>
                 <constraint firstItem="tO2-FP-QBz" firstAttribute="top" secondItem="GMG-YN-tUu" secondAttribute="top" id="IJS-U7-Tym"/>
                 <constraint firstItem="1b2-Y9-471" firstAttribute="leading" secondItem="fiS-iG-fhd" secondAttribute="leading" id="JY4-ih-bCj"/>
+                <constraint firstItem="0VJ-mW-DPn" firstAttribute="trailing" secondItem="gRx-gM-Uf9" secondAttribute="trailing" id="Jpd-VU-tmL"/>
                 <constraint firstItem="kxF-uP-sGv" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="top" id="KWr-ob-Nes"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" constant="1000" id="L8e-99-GTQ"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="leading" secondItem="PyJ-1u-a1I" secondAttribute="leading" id="LD5-8r-2Js"/>
+                <constraint firstItem="0VJ-mW-DPn" firstAttribute="leading" secondItem="gRx-gM-Uf9" secondAttribute="leading" id="MTd-eI-BFV"/>
                 <constraint firstItem="kxF-uP-sGv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MVi-gQ-Jup"/>
                 <constraint firstItem="G5i-cY-CUs" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="bottom" constant="15" id="Mp6-Io-cPr"/>
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="centerY" secondItem="O6L-GF-03G" secondAttribute="centerY" constant="-5" id="N0b-DP-d9S"/>
@@ -366,6 +385,7 @@
                 <constraint firstItem="GMG-YN-tUu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-13.5" id="UjX-0o-7Rn"/>
                 <constraint firstAttribute="bottom" secondItem="G5i-cY-CUs" secondAttribute="bottom" priority="750" constant="20" id="VeG-F2-AZX"/>
                 <constraint firstItem="XiW-er-8qo" firstAttribute="leading" secondItem="A0p-gk-Vfi" secondAttribute="trailing" constant="15" id="WNX-DW-hfC"/>
+                <constraint firstItem="0VJ-mW-DPn" firstAttribute="bottom" secondItem="gRx-gM-Uf9" secondAttribute="bottom" id="WTI-p6-Egw"/>
                 <constraint firstItem="WSG-tB-uMY" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="top" id="WtN-RA-z0M"/>
                 <constraint firstItem="O6L-GF-03G" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" id="aoL-b9-XmX"/>
                 <constraint firstItem="V43-9H-i4h" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bQ9-w9-wKm"/>
@@ -388,6 +408,7 @@
                 <constraint firstItem="4gR-Jh-LSw" firstAttribute="leading" secondItem="1b2-Y9-471" secondAttribute="leading" id="vdz-JP-y1e"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="G5i-cY-CUs" secondAttribute="bottom" priority="900" constant="1000" id="wWv-rJ-leh"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1kf-oZ-TIQ" secondAttribute="trailing" constant="20" id="wvt-LV-hLA"/>
+                <constraint firstItem="0VJ-mW-DPn" firstAttribute="top" secondItem="gRx-gM-Uf9" secondAttribute="top" id="x82-YC-FpJ"/>
                 <constraint firstItem="ka9-rT-j1K" firstAttribute="bottom" secondItem="E9I-ru-hzC" secondAttribute="bottom" id="yGQ-HO-knO"/>
                 <constraint firstItem="6kl-37-etI" firstAttribute="centerX" secondItem="V43-9H-i4h" secondAttribute="centerX" id="ym2-SN-cZr"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="top" secondItem="xfx-MW-rET" secondAttribute="bottom" constant="15" id="z4d-6n-9Xu"/>

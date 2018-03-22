@@ -19,6 +19,14 @@ public protocol PinViewDelegate: class {
     func pinViewDidTapCancel(pinView: PinView)
 
     /**
+     Function gets called when the user taps the `Forgot my pin` button on the PinView
+
+     - Parameters:
+     - pinView: The `PinView` that called the delegate function
+     */
+    func pinViewDidTapForgotMyPin(pinView: PinView)
+
+    /**
      Function gets called when the user ends entering the 4 digit pin
 
      - Parameters:
@@ -59,6 +67,7 @@ public final class PinView: UIView {
     @IBOutlet weak var pinBubbleThree: PinBubble!
     @IBOutlet weak var pinBubbleFour: PinBubble!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var forgotMyPinButton: UIButton!
     @IBOutlet weak var buttonOne: PinButton!
     @IBOutlet weak var buttonTwo: PinButton!
     @IBOutlet weak var buttonThree: PinButton!
@@ -185,6 +194,13 @@ public final class PinView: UIView {
         cancelButton.isHidden = true
     }
 
+    /**
+     This function will hide the forgot my pin button from the pin view
+     */
+    public func hideForgotMyPinButton() {
+        forgotMyPinButton.isHidden = true
+    }
+
 }
 
 private extension PinView {
@@ -238,6 +254,7 @@ private extension PinView {
         buttonNine.digitFont = font
         buttonZero.digitFont = font
         cancelButton.titleLabel?.font = font.withSize(cancelButton.titleLabel?.font.pointSize ?? 11)
+        forgotMyPinButton.titleLabel?.font = font.withSize(forgotMyPinButton.titleLabel?.font.pointSize ?? 11)
         titleLabel.font = boldFont.withSize(titleLabel.font.pointSize)
     }
 
@@ -255,8 +272,16 @@ private extension PinView {
     }
 
     // MARK: IBActions
+    @IBAction func cancelOrForgotPinTapDown(_ sender: UIButton) {
+        sender.animateTap()
+    }
+
     @IBAction func cancelTapped(_ sender: UIButton) {
         delegate?.pinViewDidTapCancel(pinView: self)
+    }
+
+    @IBAction func forgotMyPinTapped(_ sender: UIButton) {
+        delegate?.pinViewDidTapForgotMyPin(pinView: self)
     }
 
     @IBAction func backspaceTapped(_ sender: UIButton) {

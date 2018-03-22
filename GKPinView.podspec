@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'GKPinView'
-  s.version               = '0.9.6.1'
+  s.version               = '0.9.7'
   s.summary               = 'A lock screen Pin/Passcode View for iPhone and iPad.'
   s.description           = <<-DESC
                             * A customisable Pin/Passcode View for iPhone or iPad

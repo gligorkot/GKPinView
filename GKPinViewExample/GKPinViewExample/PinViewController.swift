@@ -32,6 +32,10 @@ extension PinViewController: PinViewDelegate {
     func pinViewDidTapCancel(pinView: PinView) {
         dismiss(animated: true, completion: nil)
     }
+
+    func pinViewDidTapForgotMyPin(pinView: PinView) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func pinView(pinView: PinView, enteredPin: String, isCorrectPinBlock: @escaping (_ isCorrect: Bool) -> ()) {
         DispatchQueue.global(qos: .background).async {
