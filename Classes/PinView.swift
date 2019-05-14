@@ -134,7 +134,7 @@ public final class PinView: UIView {
     /**
      The blur background effect style that will be applied, if and only if `blurBackground` property is set to `true`
     */
-    public var blurBackgroundEffectStyle: UIBlurEffectStyle = .dark {
+    public var blurBackgroundEffectStyle: UIBlurEffect.Style = .dark {
         didSet {
             visualEffectBackground.effect = UIBlurEffect(style: blurBackgroundEffectStyle)
         }

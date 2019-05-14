@@ -41,14 +41,14 @@ extension UIButton {
         opacityAnimation.fromValue = 1.0
         opacityAnimation.toValue = 0.0
         opacityAnimation.isRemovedOnCompletion = false
-        opacityAnimation.fillMode = kCAFillModeForwards
+        opacityAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         // run both scale and opacity animations in a group for ripple layer
         let rippleAnimation = CAAnimationGroup()
         rippleAnimation.duration = 0.6
-        rippleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        rippleAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         rippleAnimation.isRemovedOnCompletion = false
-        rippleAnimation.fillMode = kCAFillModeForwards
+        rippleAnimation.fillMode = CAMediaTimingFillMode.forwards
         rippleAnimation.animations = [scaleAnimation, opacityAnimation]
         
         // add animations to layers
