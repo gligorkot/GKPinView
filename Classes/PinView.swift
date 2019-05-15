@@ -225,8 +225,9 @@ public final class PinView: UIView {
                             if isCorrect {
                                 delegate.pinViewDidSucceed(pinView: self)
                             } else {
-                                self.resetPinViewState()
-                                self.shakeBubbles()
+                                self.shakeBubbles() { _ in
+                                    self.resetPinViewState()
+                                }
                                 delegate.pinViewDidFailWithIncorrectPin(pinView: self)
                             }
                         }
@@ -505,11 +506,11 @@ private extension PinView {
         titleLabel.isHidden = false
     }
 
-    func shakeBubbles() {
+    func shakeBubbles(_ completion: ((Bool) -> Void)? = nil) {
         pinBubbleOne.shake()
         pinBubbleTwo.shake()
         pinBubbleThree.shake()
-        pinBubbleFour.shake()
+        pinBubbleFour.shake(completion)
     }
 
 }

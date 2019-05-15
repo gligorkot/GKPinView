@@ -46,11 +46,11 @@ final class PinBubble: UIView {
         fillLayer.fill(with: .destinationAtop, alpha: 1)
     }
     
-    func shake() {
+    func shake(_ completion: ((Bool) -> Void)? = nil) {
         self.transform = CGAffineTransform(translationX: 16, y: 0)
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.transform = CGAffineTransform.identity
-        }, completion: nil)
+        }, completion: completion)
     }
 
 }
