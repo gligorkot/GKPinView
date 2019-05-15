@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,6 +30,7 @@
                 <outlet property="pinBubbleTwo" destination="GMG-YN-tUu" id="QQf-Wk-dDH"/>
                 <outlet property="rootView" destination="iN0-l3-epB" id="TNl-Jd-wFx"/>
                 <outlet property="titleLabel" destination="V43-9H-i4h" id="Eam-S7-21L"/>
+                <outlet property="titleLabelHeightConstraint" destination="NQD-iY-WgY" id="UsD-0v-2ya"/>
                 <outlet property="visualEffectBackground" destination="XgL-zH-Ncz" id="Rxc-Bn-rpV"/>
             </connections>
         </placeholder>
@@ -62,7 +63,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="e5R-QM-fKk"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V43-9H-i4h">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Passcode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V43-9H-i4h">
                     <rect key="frame" x="20" y="30" width="280" height="21"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -73,48 +74,48 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tO2-FP-QBz" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="113.5" y="72.5" width="12" height="12"/>
+                    <rect key="frame" x="113.5" y="72" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="12" id="A8b-pE-cB5"/>
-                        <constraint firstAttribute="height" constant="12" id="oNs-sx-Oad"/>
+                        <constraint firstAttribute="width" constant="12" placeholder="YES" id="A8b-pE-cB5"/>
+                        <constraint firstAttribute="height" constant="12" placeholder="YES" id="oNs-sx-Oad"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMG-YN-tUu" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="140.5" y="72.5" width="12" height="12"/>
+                    <rect key="frame" x="140.5" y="72" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="12" id="azf-dE-Cu0"/>
-                        <constraint firstAttribute="height" constant="12" id="nmg-VN-CKQ"/>
+                        <constraint firstAttribute="width" constant="12" placeholder="YES" id="azf-dE-Cu0"/>
+                        <constraint firstAttribute="height" constant="12" placeholder="YES" id="nmg-VN-CKQ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0p-gk-Vfi" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="167.5" y="72.5" width="12" height="12"/>
+                    <rect key="frame" x="167.5" y="72" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="12" id="HHt-KX-bLQ"/>
-                        <constraint firstAttribute="width" constant="12" id="ZuE-Xg-zSk"/>
+                        <constraint firstAttribute="height" constant="12" placeholder="YES" id="HHt-KX-bLQ"/>
+                        <constraint firstAttribute="width" constant="12" placeholder="YES" id="ZuE-Xg-zSk"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-er-8qo" customClass="PinBubble" customModule="GKPinView" customModuleProvider="target">
-                    <rect key="frame" x="194.5" y="72.5" width="12" height="12"/>
+                    <rect key="frame" x="194.5" y="72" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="12" id="VwG-Im-P3o"/>
-                        <constraint firstAttribute="width" constant="12" id="cp6-mN-kpt"/>
+                        <constraint firstAttribute="height" constant="12" placeholder="YES" id="VwG-Im-P3o"/>
+                        <constraint firstAttribute="width" constant="12" placeholder="YES" id="cp6-mN-kpt"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFilled" value="NO"/>
@@ -340,7 +341,7 @@
                     </connections>
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-37-etI">
-                    <rect key="frame" x="149.5" y="30" width="20" height="20"/>
+                    <rect key="frame" x="150" y="30.5" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -353,7 +354,7 @@
                 <constraint firstItem="8xa-ag-sUX" firstAttribute="leading" secondItem="ZfB-Yv-7Vu" secondAttribute="leading" id="2mC-ni-VWH"/>
                 <constraint firstItem="WSG-tB-uMY" firstAttribute="leading" secondItem="8xa-ag-sUX" secondAttribute="leading" id="3TV-ha-nz6"/>
                 <constraint firstItem="E9I-ru-hzC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3rG-IJ-bFf"/>
-                <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="13.5" id="4qc-ab-aE1"/>
+                <constraint firstItem="A0p-gk-Vfi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="13.5" placeholder="YES" id="4qc-ab-aE1"/>
                 <constraint firstItem="E9I-ru-hzC" firstAttribute="top" secondItem="O6L-GF-03G" secondAttribute="bottom" id="8hS-JT-Lqc"/>
                 <constraint firstItem="xfx-MW-rET" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="250" constant="46" id="9Kv-hj-82m"/>
                 <constraint firstAttribute="trailing" secondItem="O6L-GF-03G" secondAttribute="trailing" id="9YM-q8-bM4"/>
@@ -381,10 +382,10 @@
                 <constraint firstAttribute="bottom" secondItem="XgL-zH-Ncz" secondAttribute="bottom" id="Pka-up-1YR"/>
                 <constraint firstItem="PyJ-1u-a1I" firstAttribute="leading" secondItem="xfx-MW-rET" secondAttribute="leading" id="Prs-vO-Akr"/>
                 <constraint firstItem="ka9-rT-j1K" firstAttribute="top" secondItem="E9I-ru-hzC" secondAttribute="top" id="Q2m-Xr-74c"/>
-                <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="15" id="RKE-Xv-56p"/>
-                <constraint firstItem="GMG-YN-tUu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-13.5" id="UjX-0o-7Rn"/>
+                <constraint firstItem="GMG-YN-tUu" firstAttribute="leading" secondItem="tO2-FP-QBz" secondAttribute="trailing" constant="15" placeholder="YES" id="RKE-Xv-56p"/>
+                <constraint firstItem="GMG-YN-tUu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-13.5" placeholder="YES" id="UjX-0o-7Rn"/>
                 <constraint firstAttribute="bottom" secondItem="G5i-cY-CUs" secondAttribute="bottom" priority="750" constant="20" id="VeG-F2-AZX"/>
-                <constraint firstItem="XiW-er-8qo" firstAttribute="leading" secondItem="A0p-gk-Vfi" secondAttribute="trailing" constant="15" id="WNX-DW-hfC"/>
+                <constraint firstItem="XiW-er-8qo" firstAttribute="leading" secondItem="A0p-gk-Vfi" secondAttribute="trailing" constant="15" placeholder="YES" id="WNX-DW-hfC"/>
                 <constraint firstItem="0VJ-mW-DPn" firstAttribute="bottom" secondItem="gRx-gM-Uf9" secondAttribute="bottom" id="WTI-p6-Egw"/>
                 <constraint firstItem="WSG-tB-uMY" firstAttribute="top" secondItem="PyJ-1u-a1I" secondAttribute="top" id="WtN-RA-z0M"/>
                 <constraint firstItem="O6L-GF-03G" firstAttribute="top" secondItem="V43-9H-i4h" secondAttribute="bottom" id="aoL-b9-XmX"/>

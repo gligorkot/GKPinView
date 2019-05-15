@@ -61,6 +61,7 @@ public final class PinView: UIView {
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var visualEffectBackground: UIVisualEffectView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var pinBubbleOne: PinBubble!
     @IBOutlet weak var pinBubbleTwo: PinBubble!
@@ -88,6 +89,42 @@ public final class PinView: UIView {
             titleLabel.text = title
         }
     }
+    
+    /**
+     The height of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleHeight: CGFloat = 21 {
+        didSet {
+            titleLabelHeightConstraint.constant = titleHeight
+        }
+    }
+    
+    /**
+     The font of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleFontName: String = "System" {
+        didSet {
+            updateTitleFont()
+        }
+    }
+    
+    /**
+     The font size of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleFontSize: CGFloat = 20 {
+        didSet {
+            updateTitleFont()
+        }
+    }
+    
+    /**
+     The color that controls the color of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleTintColor: UIColor = .white {
+        didSet {
+            titleLabel.textColor = titleTintColor
+        }
+    }
 
     /**
      The boolean value specifying whether or not the `PinView` will have a blurred background or not
@@ -108,7 +145,16 @@ public final class PinView: UIView {
     @IBInspectable public var lettersFontName: String = "System" {
         didSet {
             // font size is not important so we just init the font with size 10
-            updateLettersFont(UIFont(name: fontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
+            updateLettersFont(UIFont(name: lettersFontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
+        }
+    }
+    
+    /**
+     The boolean value specifying whether or not the keypad buttons will show letters or not
+     */
+    @IBInspectable public var hideKeypadLetters: Bool = false {
+        didSet {
+            updateKeypadLettersVisible()
         }
     }
 
@@ -118,6 +164,33 @@ public final class PinView: UIView {
     @IBInspectable public var bubblesTintColor: UIColor! {
         didSet {
             updateViewsTintColor()
+        }
+    }
+    
+    /**
+     The width and height of the pin bubbles
+     */
+    @IBInspectable public var bubblesBorderSize: CGFloat = 1 {
+        didSet {
+            updateBubblesConstraints()
+        }
+    }
+    
+    /**
+     The width and height of the pin bubbles
+     */
+    @IBInspectable public var bubblesSize: CGFloat = 12 {
+        didSet {
+            updateBubblesConstraints()
+        }
+    }
+    
+    /**
+     The margin between the pin bubbles
+     */
+    @IBInspectable public var bubblesMargin: CGFloat = 15 {
+        didSet {
+            updateBubblesConstraints()
         }
     }
 
@@ -141,7 +214,7 @@ public final class PinView: UIView {
     }
 
     // MARK: - State
-    fileprivate var enteredPin = "" {
+    private var enteredPin = "" {
         didSet {
             if let delegate = delegate, enteredPin.length == 4 {
                 showLoading()
@@ -200,6 +273,20 @@ public final class PinView: UIView {
     public func hideForgotMyPinButton() {
         forgotMyPinButton.isHidden = true
     }
+    
+    // constraints
+    private var pinBubbleOneWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleOneHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleTwoWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleTwoHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleThreeWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleThreeHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleFourWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleFourHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleOneMarginConstraint: NSLayoutConstraint!
+    private var pinBubbleTwoMarginConstraint: NSLayoutConstraint!
+    private var pinBubbleThreeMarginConstraint: NSLayoutConstraint!
+    private var pinBubbleFourMarginConstraint: NSLayoutConstraint!
 
 }
 
@@ -215,6 +302,36 @@ private extension PinView {
         // update views tint color to the self.tintColor
         updateViewsTintColor()
         addSubview(view)
+        // init bubble constraints
+        pinBubbleOneWidthConstraint = pinBubbleOne.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleOneHeightConstraint = pinBubbleOne.heightAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleTwoWidthConstraint = pinBubbleTwo.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleTwoHeightConstraint = pinBubbleTwo.heightAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleThreeWidthConstraint = pinBubbleThree.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleThreeHeightConstraint = pinBubbleThree.heightAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleFourWidthConstraint = pinBubbleFour.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleFourHeightConstraint = pinBubbleFour.heightAnchor.constraint(equalToConstant: bubblesSize)
+        NSLayoutConstraint.activate([
+            pinBubbleOneWidthConstraint,
+            pinBubbleOneHeightConstraint,
+            pinBubbleTwoWidthConstraint,
+            pinBubbleTwoHeightConstraint,
+            pinBubbleThreeWidthConstraint,
+            pinBubbleThreeHeightConstraint,
+            pinBubbleFourWidthConstraint,
+            pinBubbleFourHeightConstraint
+            ])
+        let centerXDiff = (bubblesMargin / 2) + (bubblesSize / 2)
+        pinBubbleOneMarginConstraint = pinBubbleOne.trailingAnchor.constraint(equalTo: pinBubbleTwo.leadingAnchor, constant: -bubblesMargin)
+        pinBubbleTwoMarginConstraint = pinBubbleTwo.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: -centerXDiff)
+        pinBubbleThreeMarginConstraint = pinBubbleThree.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: centerXDiff)
+        pinBubbleFourMarginConstraint = pinBubbleFour.leadingAnchor.constraint(equalTo: pinBubbleThree.trailingAnchor, constant: bubblesMargin)
+        NSLayoutConstraint.activate([
+            pinBubbleOneMarginConstraint,
+            pinBubbleTwoMarginConstraint,
+            pinBubbleThreeMarginConstraint,
+            pinBubbleFourMarginConstraint
+            ])
     }
 
     func viewFromNib() -> UIView {
@@ -224,6 +341,14 @@ private extension PinView {
             return view
         }
         fatalError("Could not initialise PinView from nib.")
+    }
+    
+    func updateTitleFont() {
+        var boldFont = UIFont(name: titleFontName, size: titleFontSize) ?? UIFont.boldSystemFont(ofSize: titleFontSize)
+        if let fontDescriptor = boldFont.fontDescriptor.withSymbolicTraits(.traitBold) {
+            boldFont = UIFont(descriptor: fontDescriptor, size: titleFontSize)
+        }
+        titleLabel.font = boldFont
     }
 
     func updateViewsTintColor() {
@@ -270,6 +395,19 @@ private extension PinView {
         buttonNine.lettersFont = font
         buttonZero.lettersFont = font
     }
+    
+    func updateKeypadLettersVisible() {
+        buttonOne.hideKeypadLetters = hideKeypadLetters
+        buttonTwo.hideKeypadLetters = hideKeypadLetters
+        buttonThree.hideKeypadLetters = hideKeypadLetters
+        buttonFour.hideKeypadLetters = hideKeypadLetters
+        buttonFive.hideKeypadLetters = hideKeypadLetters
+        buttonSix.hideKeypadLetters = hideKeypadLetters
+        buttonSeven.hideKeypadLetters = hideKeypadLetters
+        buttonEight.hideKeypadLetters = hideKeypadLetters
+        buttonNine.hideKeypadLetters = hideKeypadLetters
+        buttonZero.hideKeypadLetters = hideKeypadLetters
+    }
 
     // MARK: IBActions
     @IBAction func cancelOrForgotPinTapDown(_ sender: UIButton) {
@@ -294,6 +432,31 @@ private extension PinView {
         if enteredPin.length < 4 {
             enteredPin = "\(enteredPin)\(sender.digit)"
         }
+    }
+    
+    func updateBubblesConstraints() {
+        // border size
+        pinBubbleOne.borderSize = bubblesBorderSize
+        pinBubbleTwo.borderSize = bubblesBorderSize
+        pinBubbleThree.borderSize = bubblesBorderSize
+        pinBubbleFour.borderSize = bubblesBorderSize
+        
+        // width and height
+        pinBubbleOneWidthConstraint.constant = bubblesSize
+        pinBubbleOneHeightConstraint.constant = bubblesSize
+        pinBubbleTwoWidthConstraint.constant = bubblesSize
+        pinBubbleTwoHeightConstraint.constant = bubblesSize
+        pinBubbleThreeWidthConstraint.constant = bubblesSize
+        pinBubbleThreeHeightConstraint.constant = bubblesSize
+        pinBubbleFourWidthConstraint.constant = bubblesSize
+        pinBubbleFourHeightConstraint.constant = bubblesSize
+        
+        // margin
+        let centerXDiff = (bubblesMargin / 2) + (bubblesSize / 2)
+        pinBubbleOneMarginConstraint.constant = -bubblesMargin
+        pinBubbleTwoMarginConstraint.constant = -centerXDiff
+        pinBubbleThreeMarginConstraint.constant = centerXDiff
+        pinBubbleFourMarginConstraint.constant = bubblesMargin
     }
 
     func updateBubbles() {
