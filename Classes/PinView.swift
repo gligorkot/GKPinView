@@ -111,6 +111,15 @@ public final class PinView: UIView {
             updateLettersFont(UIFont(name: fontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
         }
     }
+    
+    /**
+     The boolean value specifying whether or not the keypad buttons will show letters or not
+     */
+    @IBInspectable public var hideKeypadLetters: Bool = false {
+        didSet {
+            updateKeypadLettersVisible()
+        }
+    }
 
     /**
      The color that controls the color of the pin bubbles
@@ -340,6 +349,19 @@ private extension PinView {
         buttonEight.lettersFont = font
         buttonNine.lettersFont = font
         buttonZero.lettersFont = font
+    }
+    
+    func updateKeypadLettersVisible() {
+        buttonOne.hideKeypadLetters = hideKeypadLetters
+        buttonTwo.hideKeypadLetters = hideKeypadLetters
+        buttonThree.hideKeypadLetters = hideKeypadLetters
+        buttonFour.hideKeypadLetters = hideKeypadLetters
+        buttonFive.hideKeypadLetters = hideKeypadLetters
+        buttonSix.hideKeypadLetters = hideKeypadLetters
+        buttonSeven.hideKeypadLetters = hideKeypadLetters
+        buttonEight.hideKeypadLetters = hideKeypadLetters
+        buttonNine.hideKeypadLetters = hideKeypadLetters
+        buttonZero.hideKeypadLetters = hideKeypadLetters
     }
 
     // MARK: IBActions
