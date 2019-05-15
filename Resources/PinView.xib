@@ -30,6 +30,7 @@
                 <outlet property="pinBubbleTwo" destination="GMG-YN-tUu" id="QQf-Wk-dDH"/>
                 <outlet property="rootView" destination="iN0-l3-epB" id="TNl-Jd-wFx"/>
                 <outlet property="titleLabel" destination="V43-9H-i4h" id="Eam-S7-21L"/>
+                <outlet property="titleLabelHeightConstraint" destination="NQD-iY-WgY" id="UsD-0v-2ya"/>
                 <outlet property="visualEffectBackground" destination="XgL-zH-Ncz" id="Rxc-Bn-rpV"/>
             </connections>
         </placeholder>

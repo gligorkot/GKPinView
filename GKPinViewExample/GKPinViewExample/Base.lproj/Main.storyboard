@@ -83,17 +83,11 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Futura"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="bubblesTintColor">
-                                        <color key="value" red="1" green="0.80392156859999997" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.97346514463424683" green="0.83798927068710327" blue="0.36457616090774536" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="lettersFontName" value="SFProDisplay"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="bubblesBorderSize">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="bubblesSize">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="bubblesMargin">
-                                        <real key="value" value="15"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleTintColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>

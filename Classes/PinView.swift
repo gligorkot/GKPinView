@@ -61,6 +61,7 @@ public final class PinView: UIView {
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var visualEffectBackground: UIVisualEffectView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var pinBubbleOne: PinBubble!
     @IBOutlet weak var pinBubbleTwo: PinBubble!
@@ -88,6 +89,42 @@ public final class PinView: UIView {
             titleLabel.text = title
         }
     }
+    
+    /**
+     The height of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleHeight: CGFloat = 21 {
+        didSet {
+            titleLabelHeightConstraint.constant = titleHeight
+        }
+    }
+    
+    /**
+     The font of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleFontName: String = "System" {
+        didSet {
+            updateTitleFont()
+        }
+    }
+    
+    /**
+     The font size of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleFontSize: CGFloat = 20 {
+        didSet {
+            updateTitleFont()
+        }
+    }
+    
+    /**
+     The color that controls the color of the title showing at the top of the `PinView`
+     */
+    @IBInspectable public var titleTintColor: UIColor = .white {
+        didSet {
+            titleLabel.textColor = titleTintColor
+        }
+    }
 
     /**
      The boolean value specifying whether or not the `PinView` will have a blurred background or not
@@ -108,7 +145,7 @@ public final class PinView: UIView {
     @IBInspectable public var lettersFontName: String = "System" {
         didSet {
             // font size is not important so we just init the font with size 10
-            updateLettersFont(UIFont(name: fontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
+            updateLettersFont(UIFont(name: lettersFontName, size: 10) ?? UIFont.systemFont(ofSize: 10))
         }
     }
     
@@ -304,6 +341,14 @@ private extension PinView {
             return view
         }
         fatalError("Could not initialise PinView from nib.")
+    }
+    
+    func updateTitleFont() {
+        var boldFont = UIFont(name: titleFontName, size: titleFontSize) ?? UIFont.boldSystemFont(ofSize: titleFontSize)
+        if let fontDescriptor = boldFont.fontDescriptor.withSymbolicTraits(.traitBold) {
+            boldFont = UIFont(descriptor: fontDescriptor, size: titleFontSize)
+        }
+        titleLabel.font = boldFont
     }
 
     func updateViewsTintColor() {
