@@ -141,6 +141,13 @@ public final class PinView: UIView {
             updateKeypadFont(UIFont(name: fontName, size: 10) ?? UIFont.boldSystemFont(ofSize: 10))
         }
     }
+    
+    @IBInspectable public var keypadFontSize: CGFloat = 30 {
+        didSet {
+            // font size is not important so we just init the font with size 10
+            updateKeypadFont(UIFont(name: fontName, size: 10) ?? UIFont.boldSystemFont(ofSize: 10))
+        }
+    }
 
     @IBInspectable public var lettersFontName: String = "System" {
         didSet {
@@ -379,6 +386,16 @@ private extension PinView {
         buttonEight.digitFont = font
         buttonNine.digitFont = font
         buttonZero.digitFont = font
+        buttonOne.digitFontSize = keypadFontSize
+        buttonTwo.digitFontSize = keypadFontSize
+        buttonThree.digitFontSize = keypadFontSize
+        buttonFour.digitFontSize = keypadFontSize
+        buttonFive.digitFontSize = keypadFontSize
+        buttonSix.digitFontSize = keypadFontSize
+        buttonSeven.digitFontSize = keypadFontSize
+        buttonEight.digitFontSize = keypadFontSize
+        buttonNine.digitFontSize = keypadFontSize
+        buttonZero.digitFontSize = keypadFontSize
         cancelButton.titleLabel?.font = font.withSize(cancelButton.titleLabel?.font.pointSize ?? 11)
         forgotMyPinButton.titleLabel?.font = font.withSize(forgotMyPinButton.titleLabel?.font.pointSize ?? 11)
         titleLabel.font = boldFont.withSize(titleLabel.font.pointSize)

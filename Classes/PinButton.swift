@@ -11,13 +11,18 @@ import UIKit
 @IBDesignable
 final class PinButton: UIButton {
     
-    private static let digitFontSize: CGFloat = 30
     private static let lettersFontSize: CGFloat = 11
     private static let lettersLabelHeight: CGFloat = 28
     
     var digitFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize) {
         didSet {
-            digitLabel.font = digitFont.withSize(PinButton.digitFontSize)
+            digitLabel.font = digitFont.withSize(digitFontSize)
+        }
+    }
+    
+    var digitFontSize: CGFloat = 30 {
+        didSet {
+            digitLabel.font = digitFont.withSize(digitFontSize)
         }
     }
     
@@ -109,7 +114,7 @@ final class PinButton: UIButton {
         
         // digit label customisations
         digitLabel.textColor = tintColor
-        digitLabel.font = digitFont.withSize(PinButton.digitFontSize)
+        digitLabel.font = digitFont.withSize(digitFontSize)
         digitLabel.textAlignment = .center
         
         // letters flabel customisations
