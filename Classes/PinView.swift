@@ -120,6 +120,33 @@ public final class PinView: UIView {
             updateViewsTintColor()
         }
     }
+    
+    /**
+     The width and height of the pin bubbles
+     */
+    @IBInspectable public var bubblesBorderSize: CGFloat = 1 {
+        didSet {
+            updateBubblesConstraints()
+        }
+    }
+    
+    /**
+     The width and height of the pin bubbles
+     */
+    @IBInspectable public var bubblesSize: CGFloat = 12 {
+        didSet {
+            updateBubblesConstraints()
+        }
+    }
+    
+    /**
+     The margin between the pin bubbles
+     */
+    @IBInspectable public var bubblesMargin: CGFloat = 15 {
+        didSet {
+            updateBubblesConstraints()
+        }
+    }
 
     /**
      The color that controls the color of the `PinView` elements
@@ -141,7 +168,7 @@ public final class PinView: UIView {
     }
 
     // MARK: - State
-    fileprivate var enteredPin = "" {
+    private var enteredPin = "" {
         didSet {
             if let delegate = delegate, enteredPin.length == 4 {
                 showLoading()
@@ -200,6 +227,20 @@ public final class PinView: UIView {
     public func hideForgotMyPinButton() {
         forgotMyPinButton.isHidden = true
     }
+    
+    // constraints
+    private var pinBubbleOneWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleOneHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleTwoWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleTwoHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleThreeWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleThreeHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleFourWidthConstraint: NSLayoutConstraint!
+    private var pinBubbleFourHeightConstraint: NSLayoutConstraint!
+    private var pinBubbleOneMarginConstraint: NSLayoutConstraint!
+    private var pinBubbleTwoMarginConstraint: NSLayoutConstraint!
+    private var pinBubbleThreeMarginConstraint: NSLayoutConstraint!
+    private var pinBubbleFourMarginConstraint: NSLayoutConstraint!
 
 }
 
@@ -215,6 +256,36 @@ private extension PinView {
         // update views tint color to the self.tintColor
         updateViewsTintColor()
         addSubview(view)
+        // init bubble constraints
+        pinBubbleOneWidthConstraint = pinBubbleOne.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleOneHeightConstraint = pinBubbleOne.heightAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleTwoWidthConstraint = pinBubbleTwo.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleTwoHeightConstraint = pinBubbleTwo.heightAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleThreeWidthConstraint = pinBubbleThree.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleThreeHeightConstraint = pinBubbleThree.heightAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleFourWidthConstraint = pinBubbleFour.widthAnchor.constraint(equalToConstant: bubblesSize)
+        pinBubbleFourHeightConstraint = pinBubbleFour.heightAnchor.constraint(equalToConstant: bubblesSize)
+        NSLayoutConstraint.activate([
+            pinBubbleOneWidthConstraint,
+            pinBubbleOneHeightConstraint,
+            pinBubbleTwoWidthConstraint,
+            pinBubbleTwoHeightConstraint,
+            pinBubbleThreeWidthConstraint,
+            pinBubbleThreeHeightConstraint,
+            pinBubbleFourWidthConstraint,
+            pinBubbleFourHeightConstraint
+            ])
+        let centerXDiff = (bubblesMargin / 2) + (bubblesSize / 2)
+        pinBubbleOneMarginConstraint = pinBubbleOne.trailingAnchor.constraint(equalTo: pinBubbleTwo.leadingAnchor, constant: -bubblesMargin)
+        pinBubbleTwoMarginConstraint = pinBubbleTwo.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: -centerXDiff)
+        pinBubbleThreeMarginConstraint = pinBubbleThree.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: centerXDiff)
+        pinBubbleFourMarginConstraint = pinBubbleFour.leadingAnchor.constraint(equalTo: pinBubbleThree.trailingAnchor, constant: bubblesMargin)
+        NSLayoutConstraint.activate([
+            pinBubbleOneMarginConstraint,
+            pinBubbleTwoMarginConstraint,
+            pinBubbleThreeMarginConstraint,
+            pinBubbleFourMarginConstraint
+            ])
     }
 
     func viewFromNib() -> UIView {
@@ -294,6 +365,31 @@ private extension PinView {
         if enteredPin.length < 4 {
             enteredPin = "\(enteredPin)\(sender.digit)"
         }
+    }
+    
+    func updateBubblesConstraints() {
+        // border size
+        pinBubbleOne.borderSize = bubblesBorderSize
+        pinBubbleTwo.borderSize = bubblesBorderSize
+        pinBubbleThree.borderSize = bubblesBorderSize
+        pinBubbleFour.borderSize = bubblesBorderSize
+        
+        // width and height
+        pinBubbleOneWidthConstraint.constant = bubblesSize
+        pinBubbleOneHeightConstraint.constant = bubblesSize
+        pinBubbleTwoWidthConstraint.constant = bubblesSize
+        pinBubbleTwoHeightConstraint.constant = bubblesSize
+        pinBubbleThreeWidthConstraint.constant = bubblesSize
+        pinBubbleThreeHeightConstraint.constant = bubblesSize
+        pinBubbleFourWidthConstraint.constant = bubblesSize
+        pinBubbleFourHeightConstraint.constant = bubblesSize
+        
+        // margin
+        let centerXDiff = (bubblesMargin / 2) + (bubblesSize / 2)
+        pinBubbleOneMarginConstraint.constant = -bubblesMargin
+        pinBubbleTwoMarginConstraint.constant = -centerXDiff
+        pinBubbleThreeMarginConstraint.constant = centerXDiff
+        pinBubbleFourMarginConstraint.constant = bubblesMargin
     }
 
     func updateBubbles() {

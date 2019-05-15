@@ -11,7 +11,11 @@ import UIKit
 @IBDesignable
 final class PinBubble: UIView {
     
-    private let borderSize: CGFloat = 1
+    @IBInspectable var borderSize: CGFloat = 1 {
+        didSet {
+            draw(bounds)
+        }
+    }
     
     @IBInspectable var isFilled: Bool = false {
         didSet {
