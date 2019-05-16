@@ -164,6 +164,11 @@ public final class PinView: UIView {
             updateKeypadLettersVisible()
         }
     }
+    
+    /**
+     The boolean value specifying whether or not the default pin view loading indicator will be shown or not
+     */
+    @IBInspectable public var hideDefaultLoadingIndicator: Bool = false
 
     /**
      The color that controls the color of the pin bubbles
@@ -515,11 +520,15 @@ private extension PinView {
 
     func showLoading() {
         titleLabel.isHidden = true
-        loadingIndicator.isHidden = false
+        if !hideDefaultLoadingIndicator {
+            loadingIndicator.isHidden = false
+        }
     }
 
     func hideLoading() {
-        loadingIndicator.isHidden = true
+        if !hideDefaultLoadingIndicator {
+            loadingIndicator.isHidden = true
+        }
         titleLabel.isHidden = false
     }
 
