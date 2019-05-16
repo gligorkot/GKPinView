@@ -234,8 +234,8 @@ public final class PinView: UIView {
                             } else {
                                 self.shakeBubbles() { _ in
                                     self.resetPinViewState()
+                                    delegate.pinViewDidFailWithIncorrectPin(pinView: self)
                                 }
-                                delegate.pinViewDidFailWithIncorrectPin(pinView: self)
                             }
                         }
                     })
