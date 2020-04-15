@@ -9,6 +9,11 @@
 import UIKit
 
 public protocol PinViewDelegate: class {
+    
+    /**
+    The bottom left button title
+    */
+    var bottomLeftButtonTitle: String { get }
 
     /**
      Function gets called when the user taps the bottom left button on the PinView
@@ -205,15 +210,6 @@ public final class PinView: UIView {
             updateViewsTintColor()
         }
     }
-    
-    /**
-     The bottom left button title
-     */
-    @IBInspectable public var bottomLeftButtonTitle: String = "Cancel" {
-        didSet {
-            bottomLeftButton.titleLabel?.text = bottomLeftButtonTitle
-        }
-    }
 
     // MARK: - Other properties
     /**
@@ -247,11 +243,16 @@ public final class PinView: UIView {
                 }
             }
             updateBubbles()
+            updateBottomLeftButton()
         }
     }
 
     // MARK: - Delegate
-    public weak var delegate: PinViewDelegate?
+    public weak var delegate: PinViewDelegate? {
+        didSet {
+            updateBottomLeftButton()
+        }
+    }
 
     // MARK: - Initialisers
     override init(frame: CGRect) {
@@ -394,8 +395,18 @@ private extension PinView {
         buttonEight.digitFontSize = keypadFontSize
         buttonNine.digitFontSize = keypadFontSize
         buttonZero.digitFontSize = keypadFontSize
-        bottomLeftButton.titleLabel?.font = font.withSize(bottomLeftButton.titleLabel?.font.pointSize ?? 11)
         titleLabel.font = boldFont.withSize(titleLabel.font.pointSize)
+        updateBottomLeftButton()
+    }
+    
+    func updateBottomLeftButton() {
+        if let bottomLeftButtonTitle = delegate?.bottomLeftButtonTitle {
+            let fontSize = bottomLeftButton.titleLabel?.font.pointSize ?? 11
+            let font = UIFont(name: fontName, size: fontSize) ?? UIFont.boldSystemFont(ofSize: fontSize)
+            let paragraph = NSMutableParagraphStyle()
+            paragraph.alignment = .center
+            bottomLeftButton.setAttributedTitle(NSAttributedString(string: bottomLeftButtonTitle, attributes: [.font : font, .paragraphStyle : paragraph]), for: .normal)
+        }
     }
 
     func updateLettersFont(_ font: UIFont) {

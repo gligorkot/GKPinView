@@ -29,6 +29,10 @@ class PinViewController: UIViewController {
 
 extension PinViewController: PinViewDelegate {
     
+    var bottomLeftButtonTitle: String {
+        return "Cancel".uppercased()
+    }
+    
     func pinViewDidTapBottomLeftButton(pinView: PinView) {
         dismiss(animated: true, completion: nil)
     }
