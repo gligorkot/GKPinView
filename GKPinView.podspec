@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'GKPinView'
-  s.version               = '0.9.13'
+  s.version               = '0.9.13.1'
   s.summary               = 'A lock screen Pin/Passcode View for iPhone and iPad.'
   s.description           = <<-DESC
                             * A customisable Pin/Passcode View for iPhone or iPad
@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.license               = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
   s.author                = { 'Gligor Kotushevski' => 'gligorkot@gmail.com' }
   s.social_media_url      = 'https://twitter.com/gligor_nz'
-  s.platform              = :ios, '9.0'
-  s.ios.deployment_target = '9.0'
+  s.platform              = :ios, '10.0'
+  s.ios.deployment_target = '10.0'
   s.source                = { :git => 'https://github.com/gligorkot/GKPinView.git', :tag => s.version.to_s }
 
   s.source_files          = 'Classes', 'Classes/*.{swift}'
@@ -21,5 +21,6 @@ Pod::Spec.new do |s|
 
   s.frameworks            = 'UIKit'
   s.requires_arc          = true
+  s.swift_versions        = ['4.0', '4.1', '4.2', '5.0', '5.1', '5.2']
 
 end
