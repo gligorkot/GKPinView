@@ -29,11 +29,7 @@ class PinViewController: UIViewController {
 
 extension PinViewController: PinViewDelegate {
     
-    func pinViewDidTapCancel(pinView: PinView) {
-        dismiss(animated: true, completion: nil)
-    }
-
-    func pinViewDidTapForgotMyPin(pinView: PinView) {
+    func pinViewDidTapBottomLeftButton(pinView: PinView) {
         dismiss(animated: true, completion: nil)
     }
     

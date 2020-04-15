@@ -11,20 +11,12 @@ import UIKit
 public protocol PinViewDelegate: class {
 
     /**
-     Function gets called when the user taps the `Cancel` button on the PinView
+     Function gets called when the user taps the bottom left button on the PinView
 
      - Parameters:
         - pinView: The `PinView` that called the delegate function
      */
-    func pinViewDidTapCancel(pinView: PinView)
-
-    /**
-     Function gets called when the user taps the `Forgot my pin` button on the PinView
-
-     - Parameters:
-     - pinView: The `PinView` that called the delegate function
-     */
-    func pinViewDidTapForgotMyPin(pinView: PinView)
+    func pinViewDidTapBottomLeftButton(pinView: PinView)
 
     /**
      Function gets called when the user ends entering the 4 digit pin
@@ -67,8 +59,7 @@ public final class PinView: UIView {
     @IBOutlet weak var pinBubbleTwo: PinBubble!
     @IBOutlet weak var pinBubbleThree: PinBubble!
     @IBOutlet weak var pinBubbleFour: PinBubble!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var forgotMyPinButton: UIButton!
+    @IBOutlet weak var bottomLeftButton: UIButton!
     @IBOutlet weak var buttonOne: PinButton!
     @IBOutlet weak var buttonTwo: PinButton!
     @IBOutlet weak var buttonThree: PinButton!
@@ -214,6 +205,15 @@ public final class PinView: UIView {
             updateViewsTintColor()
         }
     }
+    
+    /**
+     The bottom left button title
+     */
+    @IBInspectable public var bottomLeftButtonTitle: String = "Cancel" {
+        didSet {
+            bottomLeftButton.titleLabel?.text = bottomLeftButtonTitle
+        }
+    }
 
     // MARK: - Other properties
     /**
@@ -274,17 +274,10 @@ public final class PinView: UIView {
     }
 
     /**
-     This function will hide the cancel button from the pin view
+     This function will hide the bottom left button from the pin view
      */
-    public func hideCancelButton() {
-        cancelButton.isHidden = true
-    }
-
-    /**
-     This function will hide the forgot my pin button from the pin view
-     */
-    public func hideForgotMyPinButton() {
-        forgotMyPinButton.isHidden = true
+    public func hideBottomLeftButton() {
+        bottomLeftButton.isHidden = true
     }
     
     // constraints
@@ -401,8 +394,7 @@ private extension PinView {
         buttonEight.digitFontSize = keypadFontSize
         buttonNine.digitFontSize = keypadFontSize
         buttonZero.digitFontSize = keypadFontSize
-        cancelButton.titleLabel?.font = font.withSize(cancelButton.titleLabel?.font.pointSize ?? 11)
-        forgotMyPinButton.titleLabel?.font = font.withSize(forgotMyPinButton.titleLabel?.font.pointSize ?? 11)
+        bottomLeftButton.titleLabel?.font = font.withSize(bottomLeftButton.titleLabel?.font.pointSize ?? 11)
         titleLabel.font = boldFont.withSize(titleLabel.font.pointSize)
     }
 
@@ -433,16 +425,12 @@ private extension PinView {
     }
 
     // MARK: IBActions
-    @IBAction func cancelOrForgotPinTapDown(_ sender: UIButton) {
+    @IBAction func bottomLeftTapDown(_ sender: UIButton) {
         sender.animateTap()
     }
 
-    @IBAction func cancelTapped(_ sender: UIButton) {
-        delegate?.pinViewDidTapCancel(pinView: self)
-    }
-
-    @IBAction func forgotMyPinTapped(_ sender: UIButton) {
-        delegate?.pinViewDidTapForgotMyPin(pinView: self)
+    @IBAction func bottomLeftTapped(_ sender: UIButton) {
+        delegate?.pinViewDidTapBottomLeftButton(pinView: self)
     }
 
     @IBAction func backspaceTapped(_ sender: UIButton) {
