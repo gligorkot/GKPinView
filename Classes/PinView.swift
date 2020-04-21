@@ -20,8 +20,9 @@ public protocol PinViewDelegate: class {
 
      - Parameters:
         - pinView: The `PinView` that called the delegate function
+        - sender: The `UIButton` that called the delegate function
      */
-    func pinViewDidTapBottomLeftButton(pinView: PinView)
+    func pinViewDidTapBottomLeftButton(pinView: PinView, sender: UIButton)
 
     /**
      Function gets called when the user ends entering the 4 digit pin
@@ -441,7 +442,7 @@ private extension PinView {
     }
 
     @IBAction func bottomLeftTapped(_ sender: UIButton) {
-        delegate?.pinViewDidTapBottomLeftButton(pinView: self)
+        delegate?.pinViewDidTapBottomLeftButton(pinView: self, sender: sender)
     }
 
     @IBAction func backspaceTapped(_ sender: UIButton) {

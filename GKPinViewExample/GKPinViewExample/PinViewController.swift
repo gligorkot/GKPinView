@@ -33,7 +33,7 @@ extension PinViewController: PinViewDelegate {
         return "Cancel".uppercased()
     }
     
-    func pinViewDidTapBottomLeftButton(pinView: PinView) {
+    func pinViewDidTapBottomLeftButton(pinView: PinView, sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
